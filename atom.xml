@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-17T19:55:35.000Z</updated>
+  <updated>2017-03-18T17:30:37.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,43 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>My New Post</title>
-    <link href="http://yoursite.com/2017/03/18/My-New-Post/"/>
-    <id>http://yoursite.com/2017/03/18/My-New-Post/</id>
-    <published>2017-03-17T19:55:35.000Z</published>
-    <updated>2017-03-17T19:55:35.000Z</updated>
+    <title>Create Custom Demain Name Of Github Pages</title>
+    <link href="http://yoursite.com/2017/03/18/custom-demain-name-of-github-pages/"/>
+    <id>http://yoursite.com/2017/03/18/custom-demain-name-of-github-pages/</id>
+    <published>2017-03-18T15:25:37.000Z</published>
+    <updated>2017-03-18T17:30:37.000Z</updated>
     
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/03/18/hello-world/"/>
-    <id>http://yoursite.com/2017/03/18/hello-world/</id>
-    <published>2017-03-17T19:27:04.000Z</published>
-    <updated>2017-03-17T19:27:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<blockquote>
+<pre><code>用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。
+</code></pre></blockquote>
+<p>  在<a href="https://www.gandi.net" target="_blank" rel="external">Candi</a>购买的.me域名username.me，托管在Github Pages的域名是username.github.io。</p>
+<h2 id="解析username-me域名到Github-pages的服务器"><a href="#解析username-me域名到Github-pages的服务器" class="headerlink" title="解析username.me域名到Github pages的服务器"></a>解析username.me域名到Github pages的服务器</h2><p>在Candi的管理界面操作。打开域名详情：</p>
+<p><img src="/uploads/Create-Custom-Demain-Name-Of-Github-Pages/2.png" alt="图片描述"></p>
+<p>点击正在使用的版本。因为Candi不允许你直接编辑区域文件，所以你必须创建副本，清空副本内容并去新增一条记录：</p>
+<p><img src="/uploads/Create-Custom-Demain-Name-Of-Github-Pages/3.png" alt="图片描述"></p>
+<p>(1) 新增类型A,代表服务器的IP指向。那么底下的值就应该填GitHub提供的地址IP：<br>192.30.252.153，而主机纪录选择@是表示username.me的解析。TTL是指域名解析的生命周期，对于固定IP的来说建议设置3600s。</p>
+<p>(2) 新增一个跟(1)类似的纪录，只是将IP替换为192.30.252.154。</p>
+<h2 id="多个域名映射"><a href="#多个域名映射" class="headerlink" title="多个域名映射"></a>多个域名映射</h2><p>新增类型CNAME,别名解析。那么底下的值就应该填你的Github pages的域名username.github.io. ,主机纪录选择www。TTL一样设置3600s。</p>
+<p>最后点击使用此版本，并且确认使用此区域的域名是username.me。（DNS需要几个小时才能生效）</p>
+<h2 id="隐藏username-github-io域名"><a href="#隐藏username-github-io域名" class="headerlink" title="隐藏username.github.io域名"></a>隐藏username.github.io域名</h2><p>  在根目录下面创建一个名为CNAME的文本文件， 里面内容为你的.me域名：<br>        $ vi CNAME</p>
+<p><img src="/uploads/Create-Custom-Demain-Name-Of-Github-Pages/4.png" alt="图片描述"><br>或者直接在Github项目的setting中直接设置custom domain。</p>
+<p>接着访问你的username.github.io的网址，会发现301重定向到了username.me</p>
+<p><img src="/uploads/Create-Custom-Demain-Name-Of-Github-Pages/5.png" alt="图片描述"></p>
+<p>总的就做完了。</p>
+<hr>
+<p>最后提示下，Github pages中的CNAME的文本文件起到了两个作用：<br>（1）因为username.me解析的IP是Github pages对外提供的公用IP，只是靠IP无法定位到具体page库的所以CNAME里面的域名就起到了定位的作用，所以CNAME里面无对应的域名是会报404的错误的。<br>（2）那就是我说的重定向了，username.github.io域名被隐藏，转到username.me域名了</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;  在&lt;a href=&quot;https
     
     </summary>
     
+      <category term="hexo的博客搭建" scheme="http://yoursite.com/categories/hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="GitHub-Pages" scheme="http://yoursite.com/tags/GitHub-Pages/"/>
+    
+      <category term="Candi" scheme="http://yoursite.com/tags/Candi/"/>
     
   </entry>
   
