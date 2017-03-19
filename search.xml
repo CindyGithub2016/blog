@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[Create Custom Demain Name Of Github Pages]]></title>
+      <url>%2F2017%2F03%2F18%2Fcustom-demain-name-of-github-pages%2F</url>
+      <content type="text"><![CDATA[用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。 在Candi购买的.me域名username.me，托管在Github Pages的域名是username.github.io。 解析username.me域名到Github pages的服务器在Candi的管理界面操作。打开域名详情： 点击正在使用的版本。因为Candi不允许你直接编辑区域文件，所以你必须创建副本，清空副本内容并去新增一条记录： (1) 新增类型A,代表服务器的IP指向。那么底下的值就应该填GitHub提供的地址IP：192.30.252.153，而主机纪录选择@是表示username.me的解析。TTL是指域名解析的生命周期，对于固定IP的来说建议设置3600s。 (2) 新增一个跟(1)类似的纪录，只是将IP替换为192.30.252.154。 多个域名映射新增类型CNAME,别名解析。那么底下的值就应该填你的Github pages的域名username.github.io. ,主机纪录选择www。TTL一样设置3600s。 最后点击使用此版本，并且确认使用此区域的域名是username.me。（DNS需要几个小时才能生效） 隐藏username.github.io域名 在根目录下面创建一个名为CNAME的文本文件， 里面内容为你的.me域名： $ vi CNAME 或者直接在Github项目的setting中直接设置custom domain。 接着访问你的username.github.io的网址，会发现301重定向到了username.me 总的就做完了。 最后提示下，Github pages中的CNAME的文本文件起到了两个作用：（1）因为username.me解析的IP是Github pages对外提供的公用IP，只是靠IP无法定位到具体page库的所以CNAME里面的域名就起到了定位的作用，所以CNAME里面无对应的域名是会报404的错误的。（2）那就是我说的重定向了，username.github.io域名被隐藏，转到username.me域名了]]></content>
+    </entry>
+
+    
+  
+  
+</search>
