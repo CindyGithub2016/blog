@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://cindynx.me/"/>
   <updated>2017-03-19T09:29:06.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://cindynx.me/</id>
   
   <author>
     <name>Cindy</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Create Custom Demain Name Of Github Pages</title>
-    <link href="http://yoursite.com/2017/03/18/custom-demain-name-of-github-pages/"/>
-    <id>http://yoursite.com/2017/03/18/custom-demain-name-of-github-pages/</id>
+    <link href="http://cindynx.me/2017/03/18/custom-demain-name-of-github-pages/"/>
+    <id>http://cindynx.me/2017/03/18/custom-demain-name-of-github-pages/</id>
     <published>2017-03-18T15:25:37.000Z</published>
     <updated>2017-03-19T09:29:06.000Z</updated>
     
@@ -52,12 +52,12 @@
     
     </summary>
     
-      <category term="hexo的博客搭建" scheme="http://yoursite.com/categories/hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="hexo的博客搭建" scheme="http://cindynx.me/categories/hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="GitHub-Pages" scheme="http://yoursite.com/tags/GitHub-Pages/"/>
+      <category term="GitHub-Pages" scheme="http://cindynx.me/tags/GitHub-Pages/"/>
     
-      <category term="Candi" scheme="http://yoursite.com/tags/Candi/"/>
+      <category term="Candi" scheme="http://cindynx.me/tags/Candi/"/>
     
   </entry>
   
