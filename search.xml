@@ -3,6 +3,34 @@
   
     
     <entry>
+      <title><![CDATA[Mysql的索引详解]]></title>
+      <url>%2F2017%2F03%2F26%2FMysql%E7%9A%84%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3%2F</url>
+      <content type="text"><![CDATA[索引的定义索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是数据结构。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。 常用的查找算法Mysql常用的查找算法是B树和B+树 索引的存储数据库必须要有索引，没有索引则检测就会变成顺序查找，时间的复杂度是O(n),在数据量很大的时候无疑是很恐怖的。在Mysql中索引是在存储引擎中实现的(上节有提到)，而不同存储引擎会使用不同索引。下面主要介绍Mysql中的InnoDB和MyISAM两种引擎。 InnoDB引擎索引的存储InnoDB引擎使用B+树作为索引结构。上节有提到InnoDB引擎的索引跟数据都是保存在同一个文件中。再具体点，对于InnoDB引擎的B+树主键索引结构，非叶子节点存储的是表的主键，叶子节点存储的是表的行数据。如图所示： 查询where id=37,其中id为主键，这时候创建的主键索引如上图，这样的条件查找主键，只需要按照B+树的检索算法(红线所示)就可以找到对应的叶子节点，然后获取到行数据。而如果查询的条件为where name=&#39;Cindy&#39;,这时候开始查询的并不是主键而是辅助键。如图所示： 这是辅助键索引B+树，是另外一棵B+树。这时候就有主键索引B+树和辅助键索引B+树，查询的时候分两步： 在辅助索引B+树中检索Cindy(红线所示), 到达其叶子节点获取到对应的主键 获取到主键之后，在主键索引B+树中检索37，到达其叶子节点获取到对应的行数据 意思就是检索完辅助索引B+树后，再检索主键索引B+树。所以InnoDB表要求必须要有主键(MyISAM可以没有)，并且最好是自增主键。如果没有设定主键或者非空唯一索引，那么MySQL自动为InnoDB表生成不可见6个字节的字段作为主键。 MyISAM引擎索引的存储MyISAM引擎也是使用B+树作为索引结构，只不过跟InnoDB引擎不同的地方在于，它的索引跟数据保存在不同文件中(上节有提到)。所以MyISAM引擎的主键索引B+树的叶子节点不再是保存的行数据，而是指向行数据的地址。不一样的还有辅助键索引B+树，它的叶子节点也是指向行数据的地址。对于行数据来说，两个键(主键和辅助键)无任何差别，都是直接通过B+树检索到地址。 也就是说MyISAM引擎通过辅助键查询的时候不需要再次访问主键索引B+树。像InnoDB引擎这样B+树的索引结构，行数据的物理存储顺序就是索引顺序的存储方式就是聚簇索引，像MyISAM引擎这样B+树的索引结构，行数据的物理存储顺序跟索引顺序无关的存储方式就是非聚簇索引，就有人会问，那么聚簇索引存储的优势在哪。 聚簇索引和非聚簇索引比较定义聚簇索引: 聚簇索引的顺序就是数据的物理存储顺序的存储方式非聚簇索引: 索引顺序与数据物理排列顺序无关的存储方式 磁盘预读索引很大，如上面提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要高几个量级。所以就有了将磁盘数据预读到内存中。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Mysql的引擎详解]]></title>
+      <url>%2F2017%2F03%2F25%2FMysql%E7%9A%84%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3%2F</url>
+      <content type="text"><![CDATA[数据库的定义我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。 存储引擎的定义关系型数据库是以表的形式存储在文件或者内存中。而存储引擎可以称为操作，存储这些表的类型。 支持的存储引擎$ mysql&gt; show engines; 详解InnoDB引擎InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外键约束的功能。适用于以下场合： 事务 外键约束 崩溃后的灾难恢复 高并发，更新密集型的表 不支持全文索引 在RUN001数据库中创建MYTABLE，MYTABLE1两张表使用InnoDB引擎，在RUN001文件夹下会生成多个文件： .frm结尾的文件是表结构文件 [tips: 这个文件与数据库引擎无关，任何存储引擎都会去生产这个与表名同名的文件。可以用来在数据库奔溃时恢复表结构] .ibd结尾的文件这个是单表空间文件(独立表空间)，也就是每个表使用一个表空间文件。存储该表的相关的数据，索引。 [tips：如果是共享表空间，表数据和索引会保存在默认表空间文件是ibdata1(默认)中，这时候是所有表共用ibdata1(一个或者多个)文件。而bdata1文件不会在RUN001文件夹下］ .opt结尾的文件是存储改数据库下的所有表的字符集和排序规则 详解MyISAM引擎MyISAM引擎则是不支持事务，行级锁和外键约束的。并且是强调性能，执行速度的引擎。适用于以下场合： 新增密集的表，在表有读取查询的同时，支持往表中插入新纪录 筛选select密集的表 支持全文索引 不支持行锁，读取时对需要读到的所有表加锁，写入时则对表加排它锁 在RUN001数据库中创建MYTABLE2，MYTABLE3两张表使用InnoDB引擎，在RUN001文件夹下每张表都会生成三个文件在数据库： .frm结尾的文件是表结构文件.MYD结尾的文件是存储数据文件.MYI结尾的文件是存储表的索引文件 最后总结一下，InnoDB适合inset和update密集型的表，MyISAM适合select密集的表 提示：最后的归类总结跟引擎使用的索引有关，下节会讲到。 使用示例$ create table MYTABLE2 (name VARCHAR(20), sex CHAR(1))ENGINE=MyISAM;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Mysql的数据类型]]></title>
+      <url>%2F2017%2F03%2F25%2FMysql%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
+      <content type="text"><![CDATA[Mysql多种类型可以分为三类：数值、日期/时间和字符串(字符)类型。 数值类型整数: tinyint、smallint、mediumint、int、bigint浮点数: float、double、real、decimal 日期和时间类型date、time、datetime、timestamp、year 字符串类型字符串: char、varchar文本: tinytext、text、mediumtext、longtext二进制(可用来存储图片、音乐等): tinyblob、blob、mediumblob、longblob]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Mac下Mysql的安装与卸载]]></title>
+      <url>%2F2017%2F03%2F24%2FMac%E4%B8%8BMysql%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD%2F</url>
+      <content type="text"><![CDATA[用Homebrew安装Mysql,首先需要安装Homebrew。 安装Mysql$ brew install mysql 运行测试$ mysql.server start 显示： Starting MySQL . SUCCESS! 登录默认情况下，Mysql用户root没有密码。 $ mysql -uroot 修改密码： $ mysqladmin -u root password &apos;new-password&apos; 卸载mysql$ brew remove mysql $ brew cleanup 如果设置了开机启动： $ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Create Custom Demain Name Of Github Pages]]></title>
       <url>%2F2017%2F03%2F18%2Fcustom-demain-name-of-github-pages%2F</url>
       <content type="text"><![CDATA[用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。 在Candi购买的.me域名username.me，托管在Github Pages的域名是username.github.io。 解析username.me域名到Github pages的服务器在Candi的管理界面操作。打开域名详情： 点击正在使用的版本。因为Candi不允许你直接编辑区域文件，所以你必须创建副本，清空副本内容并去新增一条记录： (1) 新增类型A,代表服务器的IP指向。那么底下的值就应该填GitHub提供的地址IP：192.30.252.153，而主机纪录选择@是表示username.me的解析。TTL是指域名解析的生命周期，对于固定IP的来说建议设置3600s。 (2) 新增一个跟(1)类似的纪录，只是将IP替换为192.30.252.154。 多个域名映射新增类型CNAME,别名解析。那么底下的值就应该填你的Github pages的域名username.github.io. ,主机纪录选择www。TTL一样设置3600s。 最后点击使用此版本，并且确认使用此区域的域名是username.me。（DNS需要几个小时才能生效） 隐藏username.github.io域名 在根目录下面创建一个名为CNAME的文本文件， 里面内容为你的.me域名： $ vi CNAME 或者直接在Github项目的setting中直接设置custom domain。 接着访问你的username.github.io的网址，会发现301重定向到了username.me 总的就做完了。 最后提示下，Github pages中的CNAME的文本文件起到了两个作用：（1）因为username.me解析的IP是Github pages对外提供的公用IP，只是靠IP无法定位到具体page库的所以CNAME里面的域名就起到了定位的作用，所以CNAME里面无对应的域名是会报404的错误的。（2）那就是我说的重定向了，username.github.io域名被隐藏，转到username.me域名了]]></content>

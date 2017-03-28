@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cindynx.me/"/>
-  <updated>2017-03-19T09:29:06.000Z</updated>
+  <updated>2017-03-28T02:10:41.000Z</updated>
   <id>http://cindynx.me/</id>
   
   <author>
@@ -16,11 +16,180 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mysql的索引详解</title>
+    <link href="http://cindynx.me/2017/03/26/Mysql%E7%9A%84%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://cindynx.me/2017/03/26/Mysql的索引详解/</id>
+    <published>2017-03-26T06:28:06.000Z</published>
+    <updated>2017-03-28T02:10:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="索引的定义"><a href="#索引的定义" class="headerlink" title="索引的定义"></a>索引的定义</h3><p>索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是<code>数据结构</code>。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。</p>
+<h3 id="常用的查找算法"><a href="#常用的查找算法" class="headerlink" title="常用的查找算法"></a>常用的查找算法</h3><p>Mysql常用的查找算法是<a href="https://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank" rel="external">B树</a>和<a href="https://zh.wikipedia.org/wiki/B%2B%E6%A0%91" target="_blank" rel="external">B+树</a></p>
+<h3 id="索引的存储"><a href="#索引的存储" class="headerlink" title="索引的存储"></a>索引的存储</h3><p>数据库必须要有索引，没有索引则检测就会变成顺序查找，时间的复杂度是O(n),在数据量很大的时候无疑是很恐怖的。在Mysql中索引是在存储引擎中实现的(上节有提到)，而不同存储引擎会使用不同索引。下面主要介绍Mysql中的InnoDB和MyISAM两种引擎。</p>
+<h4 id="InnoDB引擎索引的存储"><a href="#InnoDB引擎索引的存储" class="headerlink" title="InnoDB引擎索引的存储"></a>InnoDB引擎索引的存储</h4><p>InnoDB引擎使用B+树作为索引结构。上节有提到InnoDB引擎的索引跟数据都是保存在同一个文件中。再具体点，对于InnoDB引擎的B+树主键索引结构，非叶子节点存储的是表的主键，叶子节点存储的是表的行数据。如图所示：<br><img src="/uploads/Mysql的索引详解/1.png" alt="图片描述"></p>
+<p>查询<code>where id=37</code>,其中id为主键，这时候创建的主键索引如上图，这样的条件查找主键，只需要按照B+树的检索算法(红线所示)就可以找到对应的叶子节点，然后获取到行数据。而如果查询的条件为<code>where name=&#39;Cindy&#39;</code>,这时候开始查询的并不是主键而是辅助键。如图所示：</p>
+<p><img src="/uploads/Mysql的索引详解/2.png" alt="图片描述"></p>
+<p>这是辅助键索引B+树，是另外一棵B+树。这时候就有主键索引B+树和辅助键索引B+树，查询的时候分两步：</p>
+<ol>
+<li>在辅助索引B+树中检索Cindy(红线所示), 到达其叶子节点获取到对应的主键</li>
+<li>获取到主键之后，在主键索引B+树中检索37，到达其叶子节点获取到对应的行数据</li>
+</ol>
+<p>意思就是检索完辅助索引B+树后，再检索主键索引B+树。所以InnoDB表要求必须要有主键(MyISAM可以没有)，并且最好是自增主键。如果没有设定主键或者非空唯一索引，那么MySQL自动为InnoDB表生成不可见6个字节的字段作为主键。</p>
+<h4 id="MyISAM引擎索引的存储"><a href="#MyISAM引擎索引的存储" class="headerlink" title="MyISAM引擎索引的存储"></a>MyISAM引擎索引的存储</h4><p>MyISAM引擎也是使用B+树作为索引结构，只不过跟InnoDB引擎不同的地方在于，它的索引跟数据保存在不同文件中(上节有提到)。所以MyISAM引擎的主键索引B+树的叶子节点不再是保存的行数据，而是指向行数据的地址。不一样的还有辅助键索引B+树，它的叶子节点也是指向行数据的地址。对于行数据来说，两个键(主键和辅助键)无任何差别，都是直接通过B+树检索到地址。</p>
+<p>也就是说MyISAM引擎通过辅助键查询的时候不需要再次访问主键索引B+树。像InnoDB引擎这样B+树的索引结构，行数据的物理存储顺序就是索引顺序的存储方式就是<code>聚簇索引</code>，像MyISAM引擎这样B+树的索引结构，行数据的物理存储顺序跟索引顺序无关的存储方式就是<code>非聚簇索引</code>，就有人会问，那么聚簇索引存储的优势在哪。</p>
+<h3 id="聚簇索引和非聚簇索引比较"><a href="#聚簇索引和非聚簇索引比较" class="headerlink" title="聚簇索引和非聚簇索引比较"></a>聚簇索引和非聚簇索引比较</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p><code>聚簇索引</code>: 聚簇索引的顺序就是数据的物理存储顺序的存储方式<br><code>非聚簇索引</code>: 索引顺序与数据物理排列顺序无关的存储方式</p>
+<h4 id="磁盘预读"><a href="#磁盘预读" class="headerlink" title="磁盘预读"></a>磁盘预读</h4><p>索引很大，如上面提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要高几个量级。所以就有了将磁盘数据预读到内存中。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;索引的定义&quot;&gt;&lt;a href=&quot;#索引的定义&quot; class=&quot;headerlink&quot; title=&quot;索引的定义&quot;&gt;&lt;/a&gt;索引的定义&lt;/h3&gt;&lt;p&gt;索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是&lt;code&gt;数据结构&lt;/code&gt;。也就是说这些数
+    
+    </summary>
+    
+      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+    
+      <category term="Index" scheme="http://cindynx.me/tags/Index/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql的引擎详解</title>
+    <link href="http://cindynx.me/2017/03/25/Mysql%E7%9A%84%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://cindynx.me/2017/03/25/Mysql的引擎详解/</id>
+    <published>2017-03-25T10:01:13.000Z</published>
+    <updated>2017-03-27T15:47:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="数据库的定义"><a href="#数据库的定义" class="headerlink" title="数据库的定义"></a>数据库的定义</h3><p>我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。</p>
+<h3 id="存储引擎的定义"><a href="#存储引擎的定义" class="headerlink" title="存储引擎的定义"></a>存储引擎的定义</h3><p>关系型数据库是以表的形式存储在文件或者内存中。而存储引擎可以称为操作，存储这些<code>表的类型</code>。</p>
+<h3 id="支持的存储引擎"><a href="#支持的存储引擎" class="headerlink" title="支持的存储引擎"></a>支持的存储引擎</h3><pre><code>$ mysql&gt; show engines;
+</code></pre><p><img src="/uploads/Mysql的引擎详解/1.png" alt="图片描述"></p>
+<h3 id="详解InnoDB引擎"><a href="#详解InnoDB引擎" class="headerlink" title="详解InnoDB引擎"></a>详解InnoDB引擎</h3><p>InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外键约束的功能。适用于以下场合：</p>
+<ol>
+<li>事务</li>
+<li>外键约束</li>
+<li>崩溃后的灾难恢复</li>
+<li>高并发，更新密集型的表</li>
+<li>不支持全文索引</li>
+</ol>
+<p>在RUN001数据库中创建MYTABLE，MYTABLE1两张表使用InnoDB引擎，在RUN001文件夹下会生成多个文件：<br><img src="/uploads/Mysql的引擎详解/2.png" alt="图片描述"></p>
+<p><code>.frm</code>结尾的文件是表结构文件</p>
+<ul>
+<li>[tips: 这个文件与数据库引擎无关，任何存储引擎都会去生产这个与表名同名的文件。可以用来在数据库奔溃时恢复表结构]</li>
+</ul>
+<p><code>.ibd</code>结尾的文件这个是单表空间文件(独立表空间)，也就是每个表使用一个表空间文件。存储该表的相关的数据，索引。</p>
+<ul>
+<li>[tips：如果是共享表空间，表数据和索引会保存在默认表空间文件是ibdata1(默认)中，这时候是所有表共用ibdata1(一个或者多个)文件。而bdata1文件不会在RUN001文件夹下］</li>
+</ul>
+<p><code>.opt</code>结尾的文件是存储改数据库下的所有表的字符集和排序规则</p>
+<h3 id="详解MyISAM引擎"><a href="#详解MyISAM引擎" class="headerlink" title="详解MyISAM引擎"></a>详解MyISAM引擎</h3><p>MyISAM引擎则是不支持事务，行级锁和外键约束的。并且是强调性能，执行速度的引擎。适用于以下场合：</p>
+<ol>
+<li>新增密集的表，在表有读取查询的同时，支持往表中插入新纪录</li>
+<li>筛选select密集的表</li>
+<li>支持全文索引</li>
+<li>不支持行锁，读取时对需要读到的所有表加锁，写入时则对表加排它锁</li>
+</ol>
+<p>在RUN001数据库中创建MYTABLE2，MYTABLE3两张表使用InnoDB引擎，在RUN001文件夹下每张表都会生成三个文件在数据库：<br><img src="/uploads/Mysql的引擎详解/3.png" alt="图片描述"></p>
+<p><code>.frm</code>结尾的文件是表结构文件<br><code>.MYD</code>结尾的文件是存储数据文件<br><code>.MYI</code>结尾的文件是存储表的索引文件</p>
+<p>最后总结一下，InnoDB适合inset和update密集型的表，MyISAM适合select密集的表</p>
+<blockquote>
+<p>提示：最后的归类总结跟引擎使用的索引有关，下节会讲到。</p>
+</blockquote>
+<h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><pre><code>$ create table MYTABLE2 (name VARCHAR(20), sex CHAR(1))ENGINE=MyISAM;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;数据库的定义&quot;&gt;&lt;a href=&quot;#数据库的定义&quot; class=&quot;headerlink&quot; title=&quot;数据库的定义&quot;&gt;&lt;/a&gt;数据库的定义&lt;/h3&gt;&lt;p&gt;我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。&lt;
+    
+    </summary>
+    
+      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+    
+      <category term="InnoDB" scheme="http://cindynx.me/tags/InnoDB/"/>
+    
+      <category term="MyISAM" scheme="http://cindynx.me/tags/MyISAM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql的数据类型</title>
+    <link href="http://cindynx.me/2017/03/25/Mysql%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://cindynx.me/2017/03/25/Mysql的数据类型/</id>
+    <published>2017-03-25T03:32:33.000Z</published>
+    <updated>2017-03-25T03:39:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Mysql多种类型可以分为三类：数值、日期/时间和字符串(字符)类型。</p>
+<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><p>整数: tinyint、smallint、mediumint、int、bigint<br>浮点数: float、double、real、decimal</p>
+<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p>date、time、datetime、timestamp、year</p>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>字符串: char、varchar<br>文本: tinytext、text、mediumtext、longtext<br>二进制(可用来存储图片、音乐等): tinyblob、blob、mediumblob、longblob</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Mysql多种类型可以分为三类：数值、日期/时间和字符串(字符)类型。&lt;/p&gt;
+&lt;h3 id=&quot;数值类型&quot;&gt;&lt;a href=&quot;#数值类型&quot; class=&quot;headerlink&quot; title=&quot;数值类型&quot;&gt;&lt;/a&gt;数值类型&lt;/h3&gt;&lt;p&gt;整数: tinyint、smallin
+    
+    </summary>
+    
+      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac下Mysql的安装与卸载</title>
+    <link href="http://cindynx.me/2017/03/24/Mac%E4%B8%8BMysql%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/"/>
+    <id>http://cindynx.me/2017/03/24/Mac下Mysql的安装与卸载/</id>
+    <published>2017-03-24T08:25:11.000Z</published>
+    <updated>2017-03-25T02:41:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>用Homebrew安装Mysql,首先需要安装<a href="https://brew.sh/" target="_blank" rel="external">Homebrew</a>。</p>
+<h3 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h3><pre><code>$ brew install mysql
+</code></pre><h3 id="运行测试"><a href="#运行测试" class="headerlink" title="运行测试"></a>运行测试</h3><pre><code>$ mysql.server start
+</code></pre><p>显示： </p>
+<pre><code>Starting MySQL
+. SUCCESS!
+</code></pre><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>默认情况下，Mysql用户root没有密码。</p>
+<pre><code>$ mysql -uroot
+</code></pre><p>修改密码：</p>
+<pre><code>$ mysqladmin -u root password &apos;new-password&apos;
+</code></pre><h3 id="卸载mysql"><a href="#卸载mysql" class="headerlink" title="卸载mysql"></a>卸载mysql</h3><pre><code>$ brew remove mysql
+$ brew cleanup
+</code></pre><p>如果设置了开机启动：</p>
+<pre><code>$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+$ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用Homebrew安装Mysql,首先需要安装&lt;a href=&quot;https://brew.sh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Homebrew&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;安装Mysql&quot;&gt;&lt;a href=&quot;#安装Mysql&quot; cl
+    
+    </summary>
+    
+      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+    
+      <category term="Homebrew" scheme="http://cindynx.me/tags/Homebrew/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Create Custom Demain Name Of Github Pages</title>
     <link href="http://cindynx.me/2017/03/18/custom-demain-name-of-github-pages/"/>
     <id>http://cindynx.me/2017/03/18/custom-demain-name-of-github-pages/</id>
     <published>2017-03-18T15:25:37.000Z</published>
-    <updated>2017-03-19T09:29:06.000Z</updated>
+    <updated>2017-03-25T02:41:27.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <pre><code>用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。
