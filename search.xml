@@ -137,8 +137,6 @@ while(count($channel-&gt;callbacks)) {
             
             <tag> RabbitMQ </tag>
             
-            <tag> [object Object] </tag>
-            
         </tags>
         
     </entry>
