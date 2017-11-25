@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cindynx.me/"/>
-  <updated>2017-11-25T08:29:57.000Z</updated>
+  <updated>2017-11-25T08:47:37.000Z</updated>
   <id>http://cindynx.me/</id>
   
   <author>
@@ -20,13 +20,9 @@
     <link href="http://cindynx.me/2017/11/25/RabbitMQ%E4%BD%BF%E7%94%A8/"/>
     <id>http://cindynx.me/2017/11/25/RabbitMQ使用/</id>
     <published>2017-11-25T07:59:26.000Z</published>
-    <updated>2017-11-25T08:29:57.000Z</updated>
+    <updated>2017-11-25T08:47:37.000Z</updated>
     
-    <content type="html"><![CDATA[<ul>
-<li>RabbitMQ<br>pic: RabbitMQ<br>categories: RabbitMQ</li>
-</ul>
-<hr>
-<h3 id="RabbitMQ的定义"><a href="#RabbitMQ的定义" class="headerlink" title="RabbitMQ的定义"></a>RabbitMQ的定义</h3><p>RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。</p>
+    <content type="html"><![CDATA[<h3 id="RabbitMQ的定义"><a href="#RabbitMQ的定义" class="headerlink" title="RabbitMQ的定义"></a>RabbitMQ的定义</h3><p>RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。</p>
 <h3 id="Mac下RabbitMQ安装"><a href="#Mac下RabbitMQ安装" class="headerlink" title="Mac下RabbitMQ安装"></a>Mac下RabbitMQ安装</h3><ol>
 <li><p>使用Homebrew安装</p>
 <pre><code>$ brew install rabbitmq
@@ -148,14 +144,16 @@ while(count($channel-&gt;callbacks)) {
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;RabbitMQ&lt;br&gt;pic: RabbitMQ&lt;br&gt;categories: RabbitMQ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;RabbitMQ的定义&quot;&gt;&lt;a href=&quot;#RabbitMQ的定义&quot; class=&quot;headerlink&quot; ti
+      &lt;h3 id=&quot;RabbitMQ的定义&quot;&gt;&lt;a href=&quot;#RabbitMQ的定义&quot; class=&quot;headerlink&quot; title=&quot;RabbitMQ的定义&quot;&gt;&lt;/a&gt;RabbitMQ的定义&lt;/h3&gt;&lt;p&gt;RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的
     
     </summary>
     
+      <category term="RabbitMQ" scheme="http://cindynx.me/categories/RabbitMQ/"/>
+    
+    
+      <category term="RabbitMQ" scheme="http://cindynx.me/tags/RabbitMQ/"/>
+    
+      <category term="[object Object]" scheme="http://cindynx.me/tags/object-Object/"/>
     
   </entry>
   
