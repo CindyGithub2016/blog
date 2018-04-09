@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://cindynx.me/"/>
+  <link href="https://cindygithub2016.github.io/blog/"/>
   <updated>2017-11-25T08:50:34.000Z</updated>
-  <id>http://cindynx.me/</id>
+  <id>https://cindygithub2016.github.io/blog/</id>
   
   <author>
     <name>Cindy</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>RabbitMQ使用</title>
-    <link href="http://cindynx.me/2017/11/25/RabbitMQ%E4%BD%BF%E7%94%A8/"/>
-    <id>http://cindynx.me/2017/11/25/RabbitMQ使用/</id>
+    <link href="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ%E4%BD%BF%E7%94%A8/"/>
+    <id>https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/</id>
     <published>2017-11-25T07:59:26.000Z</published>
     <updated>2017-11-25T08:50:34.000Z</updated>
     
@@ -148,17 +148,17 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="RabbitMQ" scheme="http://cindynx.me/categories/RabbitMQ/"/>
+      <category term="RabbitMQ" scheme="https://cindygithub2016.github.io/blog/categories/RabbitMQ/"/>
     
     
-      <category term="RabbitMQ" scheme="http://cindynx.me/tags/RabbitMQ/"/>
+      <category term="RabbitMQ" scheme="https://cindygithub2016.github.io/blog/tags/RabbitMQ/"/>
     
   </entry>
   
   <entry>
     <title>Mysql的索引详解</title>
-    <link href="http://cindynx.me/2017/03/26/Mysql%E7%9A%84%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://cindynx.me/2017/03/26/Mysql的索引详解/</id>
+    <link href="https://cindygithub2016.github.io/blog/2017/03/26/Mysql%E7%9A%84%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://cindygithub2016.github.io/blog/2017/03/26/Mysql的索引详解/</id>
     <published>2017-03-26T06:28:06.000Z</published>
     <updated>2017-05-13T06:17:25.000Z</updated>
     
@@ -196,19 +196,19 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
     
-      <category term="Index" scheme="http://cindynx.me/tags/Index/"/>
+      <category term="Index" scheme="https://cindygithub2016.github.io/blog/tags/Index/"/>
     
   </entry>
   
   <entry>
     <title>Mysql的引擎详解</title>
-    <link href="http://cindynx.me/2017/03/25/Mysql%E7%9A%84%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://cindynx.me/2017/03/25/Mysql的引擎详解/</id>
+    <link href="https://cindygithub2016.github.io/blog/2017/03/25/Mysql%E7%9A%84%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://cindygithub2016.github.io/blog/2017/03/25/Mysql的引擎详解/</id>
     <published>2017-03-25T10:01:13.000Z</published>
     <updated>2017-03-27T15:47:16.000Z</updated>
     
@@ -256,21 +256,21 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
     
-      <category term="InnoDB" scheme="http://cindynx.me/tags/InnoDB/"/>
+      <category term="InnoDB" scheme="https://cindygithub2016.github.io/blog/tags/InnoDB/"/>
     
-      <category term="MyISAM" scheme="http://cindynx.me/tags/MyISAM/"/>
+      <category term="MyISAM" scheme="https://cindygithub2016.github.io/blog/tags/MyISAM/"/>
     
   </entry>
   
   <entry>
     <title>Mysql的数据类型</title>
-    <link href="http://cindynx.me/2017/03/25/Mysql%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://cindynx.me/2017/03/25/Mysql的数据类型/</id>
+    <link href="https://cindygithub2016.github.io/blog/2017/03/25/Mysql%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://cindygithub2016.github.io/blog/2017/03/25/Mysql的数据类型/</id>
     <published>2017-03-25T03:32:33.000Z</published>
     <updated>2017-03-25T03:39:56.000Z</updated>
     
@@ -287,17 +287,17 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>Mac下Mysql的安装与卸载</title>
-    <link href="http://cindynx.me/2017/03/24/Mac%E4%B8%8BMysql%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/"/>
-    <id>http://cindynx.me/2017/03/24/Mac下Mysql的安装与卸载/</id>
+    <link href="https://cindygithub2016.github.io/blog/2017/03/24/Mac%E4%B8%8BMysql%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/"/>
+    <id>https://cindygithub2016.github.io/blog/2017/03/24/Mac下Mysql的安装与卸载/</id>
     <published>2017-03-24T08:25:11.000Z</published>
     <updated>2017-03-25T02:41:58.000Z</updated>
     
@@ -325,19 +325,19 @@ $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     
     </summary>
     
-      <category term="Mysql教程" scheme="http://cindynx.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="http://cindynx.me/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
     
-      <category term="Homebrew" scheme="http://cindynx.me/tags/Homebrew/"/>
+      <category term="Homebrew" scheme="https://cindygithub2016.github.io/blog/tags/Homebrew/"/>
     
   </entry>
   
   <entry>
     <title>Create Custom Demain Name Of Github Pages</title>
-    <link href="http://cindynx.me/2017/03/18/custom-demain-name-of-github-pages/"/>
-    <id>http://cindynx.me/2017/03/18/custom-demain-name-of-github-pages/</id>
+    <link href="https://cindygithub2016.github.io/blog/2017/03/18/custom-demain-name-of-github-pages/"/>
+    <id>https://cindygithub2016.github.io/blog/2017/03/18/custom-demain-name-of-github-pages/</id>
     <published>2017-03-18T15:25:37.000Z</published>
     <updated>2017-03-25T02:41:27.000Z</updated>
     
@@ -371,12 +371,12 @@ $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     
     </summary>
     
-      <category term="hexo的博客搭建" scheme="http://cindynx.me/categories/hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="hexo的博客搭建" scheme="https://cindygithub2016.github.io/blog/categories/hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="GitHub-Pages" scheme="http://cindynx.me/tags/GitHub-Pages/"/>
+      <category term="GitHub-Pages" scheme="https://cindygithub2016.github.io/blog/tags/GitHub-Pages/"/>
     
-      <category term="Candi" scheme="http://cindynx.me/tags/Candi/"/>
+      <category term="Candi" scheme="https://cindygithub2016.github.io/blog/tags/Candi/"/>
     
   </entry>
   
