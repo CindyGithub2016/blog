@@ -107,24 +107,24 @@
 
 
 
-<meta name="description" content="索引的定义索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是数据结构。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。
-常用的查找算法Mysql常用的查找算法是B树和B+树
-B+树作为索引结构索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要高几个量级。">
+<meta name="description" content="一、索引的定义索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是数据结构。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。
+二、常用的查找算法Mysql常用的查找算法是B树和B+树
+三、B+树作为索引结构索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql的索引详解">
 <meta property="og:url" content="https://cindygithub2016.github.io/blog/2017/03/26/Mysql的索引详解/index.html">
 <meta property="og:site_name" content="Cindy's Blog">
-<meta property="og:description" content="索引的定义索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是数据结构。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。
-常用的查找算法Mysql常用的查找算法是B树和B+树
-B+树作为索引结构索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要高几个量级。">
+<meta property="og:description" content="一、索引的定义索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是数据结构。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。
+二、常用的查找算法Mysql常用的查找算法是B树和B+树
+三、B+树作为索引结构索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Mysql的索引详解/1.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Mysql的索引详解/2.png">
-<meta property="og:updated_time" content="2018-05-01T07:00:23.694Z">
+<meta property="og:updated_time" content="2018-05-01T13:58:17.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql的索引详解">
-<meta name="twitter:description" content="索引的定义索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是数据结构。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。
-常用的查找算法Mysql常用的查找算法是B树和B+树
-B+树作为索引结构索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要高几个量级。">
+<meta name="twitter:description" content="一、索引的定义索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是数据结构。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。
+二、常用的查找算法Mysql常用的查找算法是B树和B+树
+三、B+树作为索引结构索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要">
 <meta name="twitter:image" content="https://cindygithub2016.github.io/blog/uploads/Mysql的索引详解/1.png">
 
 
@@ -441,13 +441,13 @@ B+树作为索引结构索引很大，如下面一节提到的都是以索引文
       
 
       
-        <h3 id="索引的定义"><a href="#索引的定义" class="headerlink" title="索引的定义"></a>索引的定义</h3><p>索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是<code>数据结构</code>。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。</p>
-<h3 id="常用的查找算法"><a href="#常用的查找算法" class="headerlink" title="常用的查找算法"></a>常用的查找算法</h3><p>Mysql常用的查找算法是<a href="https://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank" rel="external">B树</a>和<a href="https://zh.wikipedia.org/wiki/B%2B%E6%A0%91" target="_blank" rel="external">B+树</a></p>
-<h3 id="B-树作为索引结构"><a href="#B-树作为索引结构" class="headerlink" title="B+树作为索引结构"></a>B+树作为索引结构</h3><p>索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要高几个量级。所以就有了将磁盘数据预读到内存中，预读的长度一般为页的整数倍。</p>
+        <h3 id="一、索引的定义"><a href="#一、索引的定义" class="headerlink" title="一、索引的定义"></a>一、索引的定义</h3><p>索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是<code>数据结构</code>。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。</p>
+<h3 id="二、常用的查找算法"><a href="#二、常用的查找算法" class="headerlink" title="二、常用的查找算法"></a>二、常用的查找算法</h3><p>Mysql常用的查找算法是<a href="https://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank" rel="external">B树</a>和<a href="https://zh.wikipedia.org/wiki/B%2B%E6%A0%91" target="_blank" rel="external">B+树</a></p>
+<h3 id="三、B-树作为索引结构"><a href="#三、B-树作为索引结构" class="headerlink" title="三、B+树作为索引结构"></a>三、B+树作为索引结构</h3><p>索引很大，如下面一节提到的都是以索引文件形式存储在磁盘上。但是访问磁盘，我们都知道磁盘的IO操作，是机械运动，相对于内存存取要高几个量级。所以就有了将磁盘数据预读到内存中，预读的长度一般为页的整数倍。</p>
 <p>根据<code>局部性原理</code>：在一段时间内，整个程序的执行所访问的存储空间局限于某个区域。所以设计者巧妙利用了局部性预读预读原理，将一个节点的大小设为等于一个页。因为根节点是常驻内存的，在根节点向下读取节点的时候，会触发一个缺页异常。此时，一次磁盘IO操作就会载入这个节点到内存。所以对于高度相对较大的二叉树就相比B树和B+树就显得不适合。</p>
 <p>而B+树是B树的变种，区别在于B+树节点不存储数据，但是B树节点会存储数据。所以在查找的时候B树检索有可能在非叶子结点结束，但是B+树是只会在叶子节点结束。但是B+树叶节点两两相连可大大增加区间访问性，可使用在范围查询等，而B-树每个节点和数据在一起，则无法区间查找。而且最重要的在一次磁盘IO中，B树的每个节点都带有对应的数据，增加了节点的大小。而磁盘IO一次读出的数据量大小是固定的，单个数据变大，每次读出的就少，那么IO次数就会增多。所以从这点来看，B+树相对B-树磁盘IO次数会少。</p>
-<h3 id="索引的存储"><a href="#索引的存储" class="headerlink" title="索引的存储"></a>索引的存储</h3><p>数据库必须要有索引，没有索引则检测就会变成顺序查找，时间的复杂度是O(n),在数据量很大的时候无疑是很恐怖的。在Mysql中索引是在存储引擎中实现的(上节有提到)，而不同存储引擎会使用不同索引。下面主要介绍Mysql中的InnoDB和MyISAM两种引擎。</p>
-<h4 id="InnoDB引擎索引的存储"><a href="#InnoDB引擎索引的存储" class="headerlink" title="InnoDB引擎索引的存储"></a>InnoDB引擎索引的存储</h4><p>InnoDB引擎使用B+树作为索引结构。上节有提到InnoDB引擎的索引跟数据都是保存在同一个文件中。再具体点，对于InnoDB引擎的B+树主键索引结构，非叶子节点存储的是表的主键，叶子节点存储的是表的行数据。如图所示：<br><img src="/uploads/Mysql的索引详解/1.png" alt="图片描述"></p>
+<h3 id="四、索引的存储"><a href="#四、索引的存储" class="headerlink" title="四、索引的存储"></a>四、索引的存储</h3><p>数据库必须要有索引，没有索引则检测就会变成顺序查找，时间的复杂度是O(n),在数据量很大的时候无疑是很恐怖的。在Mysql中索引是在存储引擎中实现的(上节有提到)，而不同存储引擎会使用不同索引。下面主要介绍Mysql中的InnoDB和MyISAM两种引擎。</p>
+<h4 id="（1）InnoDB引擎索引的存储"><a href="#（1）InnoDB引擎索引的存储" class="headerlink" title="（1）InnoDB引擎索引的存储"></a>（1）InnoDB引擎索引的存储</h4><p>InnoDB引擎使用B+树作为索引结构。上节有提到InnoDB引擎的索引跟数据都是保存在同一个文件中。再具体点，对于InnoDB引擎的B+树主键索引结构，非叶子节点存储的是表的主键，叶子节点存储的是表的行数据。如图所示：<br><img src="/uploads/Mysql的索引详解/1.png" alt="图片描述"></p>
 <p>查询<code>where id=37</code>,其中id为主键，这时候创建的主键索引如上图，这样的条件查找主键，只需要按照B+树的检索算法(红线所示)就可以找到对应的叶子节点，然后获取到行数据。而如果查询的条件为<code>where name=&#39;Cindy&#39;</code>,这时候开始查询的并不是主键而是辅助键。如图所示：</p>
 <p><img src="/uploads/Mysql的索引详解/2.png" alt="图片描述"></p>
 <p>这是辅助键索引B+树，是另外一棵B+树。这时候就有主键索引B+树和辅助键索引B+树，查询的时候分两步：</p>
@@ -456,17 +456,17 @@ B+树作为索引结构索引很大，如下面一节提到的都是以索引文
 <li>获取到主键之后，在主键索引B+树中检索37，到达其叶子节点获取到对应的行数据</li>
 </ol>
 <p>意思就是检索完辅助索引B+树后，再检索主键索引B+树。所以InnoDB表要求必须要有主键(MyISAM可以没有)，并且最好是自增主键。如果没有设定主键或者非空唯一索引，那么MySQL自动为InnoDB表生成不可见6个字节的字段作为主键。</p>
-<h4 id="MyISAM引擎索引的存储"><a href="#MyISAM引擎索引的存储" class="headerlink" title="MyISAM引擎索引的存储"></a>MyISAM引擎索引的存储</h4><p>MyISAM引擎也是使用B+树作为索引结构，只不过跟InnoDB引擎不同的地方在于，它的索引跟数据保存在不同文件中(上节有提到)。所以MyISAM引擎的主键索引B+树的叶子节点不再是保存的行数据，而是指向行数据的地址。不一样的还有辅助键索引B+树，它的叶子节点也是指向行数据的地址。对于行数据来说，两个键(主键和辅助键)无任何差别，都是直接通过B+树检索到地址。</p>
+<h4 id="（2）MyISAM引擎索引的存储"><a href="#（2）MyISAM引擎索引的存储" class="headerlink" title="（2）MyISAM引擎索引的存储"></a>（2）MyISAM引擎索引的存储</h4><p>MyISAM引擎也是使用B+树作为索引结构，只不过跟InnoDB引擎不同的地方在于，它的索引跟数据保存在不同文件中(上节有提到)。所以MyISAM引擎的主键索引B+树的叶子节点不再是保存的行数据，而是指向行数据的地址。不一样的还有辅助键索引B+树，它的叶子节点也是指向行数据的地址。对于行数据来说，两个键(主键和辅助键)无任何差别，都是直接通过B+树检索到地址。</p>
 <p>也就是说MyISAM引擎通过辅助键查询的时候不需要再次访问主键索引B+树。像InnoDB引擎这样B+树的索引结构，行数据的物理存储顺序就是索引顺序的存储方式就是<code>聚簇索引</code>，像MyISAM引擎这样B+树的索引结构，行数据的物理存储顺序跟索引顺序无关的存储方式就是<code>非聚簇索引</code>，就有人会问，那么InnoDB索引存储的优势在哪？明明每次使用辅助索引检索都要经过两次B+树查找。</p>
-<h3 id="查询比较"><a href="#查询比较" class="headerlink" title="查询比较"></a>查询比较</h3><ul>
+<h3 id="五、查询比较"><a href="#五、查询比较" class="headerlink" title="五、查询比较"></a>五、查询比较</h3><ul>
 <li><p>上一节有提到MyISAM适合select密集的表。在select密集的表，如果是根据主键查询，那么InnoDB引擎索引存储方式只需要检索主键索引树就可以直接拿到行数据，但是MyISAM只会拿到地址，还必须再次查找。但是如果不是主键查询，InnoDB方式会比MyISAM方式多检索一颗B+树，所以这就是为什么MyISAM适合select密集的表。</p>
 </li>
 <li><p>当出现行移动或者数据页分裂时辅助索引的维护工作，InnoDB方式只需要更新主键索引B+树，但是MyISAM方式则是需要更新树的地址。</p>
 </li>
 </ul>
-<h3 id="聚簇索引定义"><a href="#聚簇索引定义" class="headerlink" title="聚簇索引定义"></a>聚簇索引定义</h3><p><code>聚簇索引</code>: 聚簇索引的顺序就是数据的物理存储顺序的存储方式。</p>
-<h3 id="非聚簇索引定义"><a href="#非聚簇索引定义" class="headerlink" title="非聚簇索引定义"></a>非聚簇索引定义</h3><p><code>非聚簇索引</code>: 索引顺序与数据物理排列顺序无关的存储方式</p>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="http://www.codeceo.com/article/mysql-innodb-index.html" target="_blank" rel="external">MySQL的InnoDB索引原理详解</a></p>
+<h3 id="六、聚簇索引定义"><a href="#六、聚簇索引定义" class="headerlink" title="六、聚簇索引定义"></a>六、聚簇索引定义</h3><p><code>聚簇索引</code>: 聚簇索引的顺序就是数据的物理存储顺序的存储方式。</p>
+<h3 id="七、非聚簇索引定义"><a href="#七、非聚簇索引定义" class="headerlink" title="七、非聚簇索引定义"></a>七、非聚簇索引定义</h3><p><code>非聚簇索引</code>: 索引顺序与数据物理排列顺序无关的存储方式</p>
+<h3 id="八、参考文献"><a href="#八、参考文献" class="headerlink" title="八、参考文献"></a>八、参考文献</h3><p><a href="http://www.codeceo.com/article/mysql-innodb-index.html" target="_blank" rel="external">MySQL的InnoDB索引原理详解</a></p>
 <p>（完）</p>
 <ul>
 <li>本文作者：Cindy</li>
@@ -706,7 +706,7 @@ B+树作为索引结构索引很大，如下面一节提到的都是以索引文
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#索引的定义"><span class="nav-number">1.</span> <span class="nav-text">索引的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的查找算法"><span class="nav-number">2.</span> <span class="nav-text">常用的查找算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-树作为索引结构"><span class="nav-number">3.</span> <span class="nav-text">B+树作为索引结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引的存储"><span class="nav-number">4.</span> <span class="nav-text">索引的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#InnoDB引擎索引的存储"><span class="nav-number">4.1.</span> <span class="nav-text">InnoDB引擎索引的存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyISAM引擎索引的存储"><span class="nav-number">4.2.</span> <span class="nav-text">MyISAM引擎索引的存储</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询比较"><span class="nav-number">5.</span> <span class="nav-text">查询比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚簇索引定义"><span class="nav-number">6.</span> <span class="nav-text">聚簇索引定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非聚簇索引定义"><span class="nav-number">7.</span> <span class="nav-text">非聚簇索引定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、索引的定义"><span class="nav-number">1.</span> <span class="nav-text">一、索引的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、常用的查找算法"><span class="nav-number">2.</span> <span class="nav-text">二、常用的查找算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、B-树作为索引结构"><span class="nav-number">3.</span> <span class="nav-text">三、B+树作为索引结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、索引的存储"><span class="nav-number">4.</span> <span class="nav-text">四、索引的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）InnoDB引擎索引的存储"><span class="nav-number">4.1.</span> <span class="nav-text">（1）InnoDB引擎索引的存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）MyISAM引擎索引的存储"><span class="nav-number">4.2.</span> <span class="nav-text">（2）MyISAM引擎索引的存储</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、查询比较"><span class="nav-number">5.</span> <span class="nav-text">五、查询比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、聚簇索引定义"><span class="nav-number">6.</span> <span class="nav-text">六、聚簇索引定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、非聚簇索引定义"><span class="nav-number">7.</span> <span class="nav-text">七、非聚簇索引定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、参考文献"><span class="nav-number">8.</span> <span class="nav-text">八、参考文献</span></a></li></ol></div>
             
 
           </div>

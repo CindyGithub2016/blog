@@ -107,41 +107,41 @@
 
 
 
-<meta name="description" content="RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
-Mac下RabbitMQ安装
+<meta name="description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
+二、Mac下RabbitMQ安装
 使用Homebrew安装
 $ brew install rabbitmq
 
 修改 ~/.bash_profile 配置环境变量：
 # RabbitMQ Config
-export PATH=$PATH:/usr/local/sbin">
+export PATH=$PATH:/usr/local/sb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ使用">
 <meta property="og:url" content="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/index.html">
 <meta property="og:site_name" content="Cindy's Blog">
-<meta property="og:description" content="RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
-Mac下RabbitMQ安装
+<meta property="og:description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
+二、Mac下RabbitMQ安装
 使用Homebrew安装
 $ brew install rabbitmq
 
 修改 ~/.bash_profile 配置环境变量：
 # RabbitMQ Config
-export PATH=$PATH:/usr/local/sbin">
+export PATH=$PATH:/usr/local/sb">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/1.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/2.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/3.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/4.png">
-<meta property="og:updated_time" content="2018-05-01T07:00:54.235Z">
+<meta property="og:updated_time" content="2018-05-01T13:55:17.544Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ使用">
-<meta name="twitter:description" content="RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
-Mac下RabbitMQ安装
+<meta name="twitter:description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
+二、Mac下RabbitMQ安装
 使用Homebrew安装
 $ brew install rabbitmq
 
 修改 ~/.bash_profile 配置环境变量：
 # RabbitMQ Config
-export PATH=$PATH:/usr/local/sbin">
+export PATH=$PATH:/usr/local/sb">
 <meta name="twitter:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/1.png">
 
 
@@ -458,8 +458,8 @@ export PATH=$PATH:/usr/local/sbin">
       
 
       
-        <h3 id="RabbitMQ的定义"><a href="#RabbitMQ的定义" class="headerlink" title="RabbitMQ的定义"></a>RabbitMQ的定义</h3><p>RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。</p>
-<h3 id="Mac下RabbitMQ安装"><a href="#Mac下RabbitMQ安装" class="headerlink" title="Mac下RabbitMQ安装"></a>Mac下RabbitMQ安装</h3><ol>
+        <h3 id="一、RabbitMQ的定义"><a href="#一、RabbitMQ的定义" class="headerlink" title="一、RabbitMQ的定义"></a>一、RabbitMQ的定义</h3><p>RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。</p>
+<h3 id="二、Mac下RabbitMQ安装"><a href="#二、Mac下RabbitMQ安装" class="headerlink" title="二、Mac下RabbitMQ安装"></a>二、Mac下RabbitMQ安装</h3><ol>
 <li><p>使用Homebrew安装</p>
 <pre><code>$ brew install rabbitmq
 </code></pre></li>
@@ -476,10 +476,10 @@ export PATH=$PATH:/usr/local/sbin
 <li><p>登录管理界面 <a href="http://127.0.0.1:15672" target="_blank" rel="external">http://127.0.0.1:15672</a> 账号密码为：guest</p>
 </li>
 </ol>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>RabbitMQ官方提供了三种PHP可用的扩展：php-amqp，php-rabbit，php-amqplib</p>
+<h3 id="三、客户端"><a href="#三、客户端" class="headerlink" title="三、客户端"></a>三、客户端</h3><p>RabbitMQ官方提供了三种PHP可用的扩展：php-amqp，php-rabbit，php-amqplib</p>
 <h4 id="php-amqplib-安装"><a href="#php-amqplib-安装" class="headerlink" title="php-amqplib 安装"></a>php-amqplib 安装</h4><p>php的客户端现在常用的是php-amqplib</p>
-<h5 id="直接拉取github上面的代码"><a href="#直接拉取github上面的代码" class="headerlink" title="直接拉取github上面的代码"></a>直接拉取github上面的代码</h5><pre><code>$ git clone https://github.com/php-amqplib/php-amqplib.git
-</code></pre><h5 id="composer安装（官网提供）"><a href="#composer安装（官网提供）" class="headerlink" title="composer安装（官网提供）"></a>composer安装（官网提供）</h5><ol>
+<h5 id="（1）直接拉取github上面的代码"><a href="#（1）直接拉取github上面的代码" class="headerlink" title="（1）直接拉取github上面的代码"></a>（1）直接拉取github上面的代码</h5><pre><code>$ git clone https://github.com/php-amqplib/php-amqplib.git
+</code></pre><h5 id="（2）composer安装（官网提供）"><a href="#（2）composer安装（官网提供）" class="headerlink" title="（2）composer安装（官网提供）"></a>（2）composer安装（官网提供）</h5><ol>
 <li><p>将composer.json文件添加到您的项目中</p>
 <pre><code>{
      “require”：{
@@ -491,25 +491,25 @@ export PATH=$PATH:/usr/local/sbin
 <pre><code>$ composer install
 </code></pre></li>
 </ol>
-<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p><img src="/uploads/RabbitMQ使用/1.png" alt="图片描述"></p>
+<h3 id="四、概念"><a href="#四、概念" class="headerlink" title="四、概念"></a>四、概念</h3><p><img src="/uploads/RabbitMQ使用/1.png" alt="图片描述"></p>
 <h4 id="Virtual-vhosts"><a href="#Virtual-vhosts" class="headerlink" title="Virtual vhosts"></a>Virtual vhosts</h4><p>virtual vhosts是一个命名空间，可以存在多个exchange和queue。实现了环境（用户，用户组，exchange，queue）隔离，是权限控制的最小粒度。默认的virtual host为/。</p>
 <h4 id="Exchange-交换机"><a href="#Exchange-交换机" class="headerlink" title="Exchange(交换机)"></a>Exchange(交换机)</h4><p>接受producer发送的消息，并根据binding绑定规则转发到对应的队列。默认是无名交换使用空字符串标识。exchange type(交换机类型)包含四种类型：direct，topic，headers，fanout</p>
-<h5 id="direct"><a href="#direct" class="headerlink" title="direct"></a>direct</h5><p>转发消息到routigKey指定的队列</p>
+<h5 id="（1）direct"><a href="#（1）direct" class="headerlink" title="（1）direct"></a>（1）direct</h5><p>转发消息到routigKey指定的队列</p>
 <p><img src="/uploads/RabbitMQ使用/2.png" alt="图片描述"></p>
-<h5 id="topic"><a href="#topic" class="headerlink" title="topic"></a>topic</h5><p>类似于direct类型，只不过routigKey为一个句点号“.”分隔的字符串</p>
+<h5 id="（2）topic"><a href="#（2）topic" class="headerlink" title="（2）topic"></a>（2）topic</h5><p>类似于direct类型，只不过routigKey为一个句点号“.”分隔的字符串</p>
 <ul>
 <li>可以替代一个字。</li>
 </ul>
 <p>＃ 可以替换零个或多个单词。</p>
 <p><img src="/uploads/RabbitMQ使用/3.png" alt="图片描述"></p>
-<h5 id="headers"><a href="#headers" class="headerlink" title="headers"></a>headers</h5><p>根据发送的消息内容中的headers属性进行匹配。</p>
-<h5 id="fanout"><a href="#fanout" class="headerlink" title="fanout"></a>fanout</h5><p>将所有收到的消息广播到所有已知的队列。</p>
+<h5 id="（3）headers"><a href="#（3）headers" class="headerlink" title="（3）headers"></a>（3）headers</h5><p>根据发送的消息内容中的headers属性进行匹配。</p>
+<h5 id="（4）fanout"><a href="#（4）fanout" class="headerlink" title="（4）fanout"></a>（4）fanout</h5><p>将所有收到的消息广播到所有已知的队列。</p>
 <p><img src="/uploads/RabbitMQ使用/4.png" alt="图片描述"></p>
 <h4 id="Queue-消息队列"><a href="#Queue-消息队列" class="headerlink" title="Queue(消息队列)"></a>Queue(消息队列)</h4><p>queue是mq内部对象，用于存储未被customer消费的消息。相同属性的queue可以重复定义，每个消息都会被投入到一个或多个队列。</p>
 <h4 id="Binding-绑定"><a href="#Binding-绑定" class="headerlink" title="Binding(绑定)"></a>Binding(绑定)</h4><p>binding是将exchange和queue按照路由规则绑定起来。可以理解为binding是exchange和queue之间的关系</p>
 <h4 id="Connection（连接）"><a href="#Connection（连接）" class="headerlink" title="Connection（连接）"></a>Connection（连接）</h4><p>消息tcp连接</p>
 <h4 id="Channel-信道"><a href="#Channel-信道" class="headerlink" title="Channel(信道)"></a>Channel(信道)</h4><p>每个connection里，可建立多个channel，每个channel代表一个会话任务。做到尽量共用connection</p>
-<h3 id="RabbitMQ使用示例"><a href="#RabbitMQ使用示例" class="headerlink" title="RabbitMQ使用示例"></a>RabbitMQ使用示例</h3><ol>
+<h3 id="五、RabbitMQ使用示例"><a href="#五、RabbitMQ使用示例" class="headerlink" title="五、RabbitMQ使用示例"></a>五、RabbitMQ使用示例</h3><ol>
 <li><p>send.php:</p>
 <pre><code>require_once __DIR__ . &apos;/vendor/autoload.php&apos;;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
@@ -566,7 +566,7 @@ while(count($channel-&gt;callbacks)) {
 }
 </code></pre></li>
 </ol>
-<h3 id="RabbitMQ备注"><a href="#RabbitMQ备注" class="headerlink" title="RabbitMQ备注"></a>RabbitMQ备注</h3><ol>
+<h3 id="六、RabbitMQ备注"><a href="#六、RabbitMQ备注" class="headerlink" title="六、RabbitMQ备注"></a>六、RabbitMQ备注</h3><ol>
 <li>非持久化会导致，队列重启，数据丢失</li>
 <li>exchange持久化，在声明durable时参数指定为true</li>
 <li>queue持久化，在声明durable时参数指定true</li>
@@ -808,7 +808,7 @@ while(count($channel-&gt;callbacks)) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ的定义"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac下RabbitMQ安装"><span class="nav-number">2.</span> <span class="nav-text">Mac下RabbitMQ安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端"><span class="nav-number">3.</span> <span class="nav-text">客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#php-amqplib-安装"><span class="nav-number">3.1.</span> <span class="nav-text">php-amqplib 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#直接拉取github上面的代码"><span class="nav-number">3.1.1.</span> <span class="nav-text">直接拉取github上面的代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#composer安装（官网提供）"><span class="nav-number">3.1.2.</span> <span class="nav-text">composer安装（官网提供）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">4.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Virtual-vhosts"><span class="nav-number">4.1.</span> <span class="nav-text">Virtual vhosts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Exchange-交换机"><span class="nav-number">4.2.</span> <span class="nav-text">Exchange(交换机)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#direct"><span class="nav-number">4.2.1.</span> <span class="nav-text">direct</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#topic"><span class="nav-number">4.2.2.</span> <span class="nav-text">topic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#headers"><span class="nav-number">4.2.3.</span> <span class="nav-text">headers</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fanout"><span class="nav-number">4.2.4.</span> <span class="nav-text">fanout</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue-消息队列"><span class="nav-number">4.3.</span> <span class="nav-text">Queue(消息队列)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binding-绑定"><span class="nav-number">4.4.</span> <span class="nav-text">Binding(绑定)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Connection（连接）"><span class="nav-number">4.5.</span> <span class="nav-text">Connection（连接）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-信道"><span class="nav-number">4.6.</span> <span class="nav-text">Channel(信道)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ使用示例"><span class="nav-number">5.</span> <span class="nav-text">RabbitMQ使用示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RabbitMQ备注"><span class="nav-number">6.</span> <span class="nav-text">RabbitMQ备注</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、RabbitMQ的定义"><span class="nav-number">1.</span> <span class="nav-text">一、RabbitMQ的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Mac下RabbitMQ安装"><span class="nav-number">2.</span> <span class="nav-text">二、Mac下RabbitMQ安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、客户端"><span class="nav-number">3.</span> <span class="nav-text">三、客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#php-amqplib-安装"><span class="nav-number">3.1.</span> <span class="nav-text">php-amqplib 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）直接拉取github上面的代码"><span class="nav-number">3.1.1.</span> <span class="nav-text">（1）直接拉取github上面的代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）composer安装（官网提供）"><span class="nav-number">3.1.2.</span> <span class="nav-text">（2）composer安装（官网提供）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、概念"><span class="nav-number">4.</span> <span class="nav-text">四、概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Virtual-vhosts"><span class="nav-number">4.1.</span> <span class="nav-text">Virtual vhosts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Exchange-交换机"><span class="nav-number">4.2.</span> <span class="nav-text">Exchange(交换机)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）direct"><span class="nav-number">4.2.1.</span> <span class="nav-text">（1）direct</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）topic"><span class="nav-number">4.2.2.</span> <span class="nav-text">（2）topic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）headers"><span class="nav-number">4.2.3.</span> <span class="nav-text">（3）headers</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（4）fanout"><span class="nav-number">4.2.4.</span> <span class="nav-text">（4）fanout</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue-消息队列"><span class="nav-number">4.3.</span> <span class="nav-text">Queue(消息队列)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binding-绑定"><span class="nav-number">4.4.</span> <span class="nav-text">Binding(绑定)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Connection（连接）"><span class="nav-number">4.5.</span> <span class="nav-text">Connection（连接）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-信道"><span class="nav-number">4.6.</span> <span class="nav-text">Channel(信道)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、RabbitMQ使用示例"><span class="nav-number">5.</span> <span class="nav-text">五、RabbitMQ使用示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、RabbitMQ备注"><span class="nav-number">6.</span> <span class="nav-text">六、RabbitMQ备注</span></a></li></ol></div>
             
 
           </div>
