@@ -131,7 +131,7 @@ export PATH=$PATH:/usr/local/sbin">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/2.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/3.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/4.png">
-<meta property="og:updated_time" content="2018-04-22T10:34:24.871Z">
+<meta property="og:updated_time" content="2018-05-01T07:00:54.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ使用">
 <meta name="twitter:description" content="RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
@@ -151,7 +151,7 @@ export PATH=$PATH:/usr/local/sbin">
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -427,7 +427,7 @@ export PATH=$PATH:/usr/local/sbin">
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/11/25/RabbitMQ使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/25/RabbitMQ使用/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/25/RabbitMQ使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -575,6 +575,12 @@ while(count($channel-&gt;callbacks)) {
 <li>消费者设置手动ack，在声明no_ack参数时指定false</li>
 <li>队列消息异常需要将消息删除并再次发送同样的消息置于末尾并手动记录日志</li>
 </ol>
+<p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
 
       
     </div>
@@ -604,7 +610,7 @@ while(count($channel-&gt;callbacks)) {
       
         <div class="post-tags">
           
-            <a href="/tags/RabbitMQ/" rel="tag"># RabbitMQ</a>
+            <a href="/tags/RabbitMQ/" rel="tag"><i class="fa fa-tag"></i> RabbitMQ</a>
           
         </div>
       
@@ -674,8 +680,11 @@ while(count($channel-&gt;callbacks)) {
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/11/25/RabbitMQ使用/"
-           data-title="RabbitMQ使用" data-url="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -940,32 +949,38 @@ while(count($channel-&gt;callbacks)) {
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cindynx"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'cindynx';
+      var disqus_identifier = '2017/11/25/RabbitMQ使用/';
+
+      var disqus_title = "RabbitMQ使用";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
-
-
-
 
 
 

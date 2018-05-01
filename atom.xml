@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cindygithub2016.github.io/blog/"/>
-  <updated>2018-04-22T10:34:24.871Z</updated>
+  <updated>2018-05-01T07:00:54.235Z</updated>
   <id>https://cindygithub2016.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ%E4%BD%BF%E7%94%A8/"/>
     <id>https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/</id>
     <published>2017-11-25T07:59:26.000Z</published>
-    <updated>2018-04-22T10:34:24.871Z</updated>
+    <updated>2018-05-01T07:00:54.235Z</updated>
     
     <content type="html"><![CDATA[<h3 id="RabbitMQ的定义"><a href="#RabbitMQ的定义" class="headerlink" title="RabbitMQ的定义"></a>RabbitMQ的定义</h3><p>RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。</p>
 <h3 id="Mac下RabbitMQ安装"><a href="#Mac下RabbitMQ安装" class="headerlink" title="Mac下RabbitMQ安装"></a>Mac下RabbitMQ安装</h3><ol>
@@ -139,6 +139,12 @@ while(count($channel-&gt;callbacks)) {
 <li>消费者设置手动ack，在声明no_ack参数时指定false</li>
 <li>队列消息异常需要将消息删除并再次发送同样的消息置于末尾并手动记录日志</li>
 </ol>
+<p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
 ]]></content>
     
     <summary type="html">
@@ -159,7 +165,7 @@ while(count($channel-&gt;callbacks)) {
     <link href="https://cindygithub2016.github.io/blog/2017/03/26/Mysql%E7%9A%84%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3/"/>
     <id>https://cindygithub2016.github.io/blog/2017/03/26/Mysql的索引详解/</id>
     <published>2017-03-26T06:28:06.000Z</published>
-    <updated>2017-05-13T06:17:25.000Z</updated>
+    <updated>2018-05-01T07:00:23.694Z</updated>
     
     <content type="html"><![CDATA[<h3 id="索引的定义"><a href="#索引的定义" class="headerlink" title="索引的定义"></a>索引的定义</h3><p>索引(Index)是帮助Mysql高效获取数据的数据结构，即索引是<code>数据结构</code>。也就是说这些数据结构(索引)满足特定的查找算法，并且指向了数据来达到帮助Mysql高效获取数据的目的。</p>
 <h3 id="常用的查找算法"><a href="#常用的查找算法" class="headerlink" title="常用的查找算法"></a>常用的查找算法</h3><p>Mysql常用的查找算法是<a href="https://zh.wikipedia.org/wiki/B%E6%A0%91" target="_blank" rel="external">B树</a>和<a href="https://zh.wikipedia.org/wiki/B%2B%E6%A0%91" target="_blank" rel="external">B+树</a></p>
@@ -187,6 +193,12 @@ while(count($channel-&gt;callbacks)) {
 <h3 id="聚簇索引定义"><a href="#聚簇索引定义" class="headerlink" title="聚簇索引定义"></a>聚簇索引定义</h3><p><code>聚簇索引</code>: 聚簇索引的顺序就是数据的物理存储顺序的存储方式。</p>
 <h3 id="非聚簇索引定义"><a href="#非聚簇索引定义" class="headerlink" title="非聚簇索引定义"></a>非聚簇索引定义</h3><p><code>非聚簇索引</code>: 索引顺序与数据物理排列顺序无关的存储方式</p>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="http://www.codeceo.com/article/mysql-innodb-index.html" target="_blank" rel="external">MySQL的InnoDB索引原理详解</a></p>
+<p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
 ]]></content>
     
     <summary type="html">
@@ -209,7 +221,7 @@ while(count($channel-&gt;callbacks)) {
     <link href="https://cindygithub2016.github.io/blog/2017/03/25/Mysql%E7%9A%84%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3/"/>
     <id>https://cindygithub2016.github.io/blog/2017/03/25/Mysql的引擎详解/</id>
     <published>2017-03-25T10:01:13.000Z</published>
-    <updated>2017-03-27T15:47:16.000Z</updated>
+    <updated>2018-05-01T07:00:44.855Z</updated>
     
     <content type="html"><![CDATA[<h3 id="数据库的定义"><a href="#数据库的定义" class="headerlink" title="数据库的定义"></a>数据库的定义</h3><p>我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。</p>
 <h3 id="存储引擎的定义"><a href="#存储引擎的定义" class="headerlink" title="存储引擎的定义"></a>存储引擎的定义</h3><p>关系型数据库是以表的形式存储在文件或者内存中。而存储引擎可以称为操作，存储这些<code>表的类型</code>。</p>
@@ -247,7 +259,13 @@ while(count($channel-&gt;callbacks)) {
 <p>提示：最后的归类总结跟引擎使用的索引有关，下节会讲到。</p>
 </blockquote>
 <h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><pre><code>$ create table MYTABLE2 (name VARCHAR(20), sex CHAR(1))ENGINE=MyISAM;
-</code></pre>]]></content>
+</code></pre><p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
@@ -271,12 +289,18 @@ while(count($channel-&gt;callbacks)) {
     <link href="https://cindygithub2016.github.io/blog/2017/03/25/Mysql%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     <id>https://cindygithub2016.github.io/blog/2017/03/25/Mysql的数据类型/</id>
     <published>2017-03-25T03:32:33.000Z</published>
-    <updated>2017-03-25T03:39:56.000Z</updated>
+    <updated>2018-05-01T07:00:08.594Z</updated>
     
     <content type="html"><![CDATA[<p>Mysql多种类型可以分为三类：数值、日期/时间和字符串(字符)类型。</p>
 <h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><p>整数: tinyint、smallint、mediumint、int、bigint<br>浮点数: float、double、real、decimal</p>
 <h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p>date、time、datetime、timestamp、year</p>
 <h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>字符串: char、varchar<br>文本: tinytext、text、mediumtext、longtext<br>二进制(可用来存储图片、音乐等): tinyblob、blob、mediumblob、longblob</p>
+<p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
 ]]></content>
     
     <summary type="html">
@@ -298,7 +322,7 @@ while(count($channel-&gt;callbacks)) {
     <link href="https://cindygithub2016.github.io/blog/2017/03/24/Mac%E4%B8%8BMysql%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/"/>
     <id>https://cindygithub2016.github.io/blog/2017/03/24/Mac下Mysql的安装与卸载/</id>
     <published>2017-03-24T08:25:11.000Z</published>
-    <updated>2017-03-25T02:41:58.000Z</updated>
+    <updated>2018-05-01T06:59:12.923Z</updated>
     
     <content type="html"><![CDATA[<p>用Homebrew安装Mysql,首先需要安装<a href="https://brew.sh/" target="_blank" rel="external">Homebrew</a>。</p>
 <h3 id="安装Mysql"><a href="#安装Mysql" class="headerlink" title="安装Mysql"></a>安装Mysql</h3><pre><code>$ brew install mysql
@@ -315,7 +339,13 @@ $ brew cleanup
 </code></pre><p>如果设置了开机启动：</p>
 <pre><code>$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-</code></pre>]]></content>
+</code></pre><p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
@@ -338,7 +368,7 @@ $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     <link href="https://cindygithub2016.github.io/blog/2017/03/18/custom-demain-name-of-github-pages/"/>
     <id>https://cindygithub2016.github.io/blog/2017/03/18/custom-demain-name-of-github-pages/</id>
     <published>2017-03-18T15:25:37.000Z</published>
-    <updated>2018-04-21T09:21:18.459Z</updated>
+    <updated>2018-05-01T06:58:44.005Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <pre><code>用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。
@@ -359,6 +389,12 @@ $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 <p>总的就做完了。</p>
 <hr>
 <p>最后提示下，Github pages中的CNAME的文本文件起到了两个作用：<br>（1）因为username.me解析的IP是Github pages对外提供的公用IP，只是靠IP无法定位到具体page库的所以CNAME里面的域名就起到了定位的作用，所以CNAME里面无对应的域名是会报404的错误的。<br>（2）那就是我说的重定向了，username.github.io域名被隐藏，转到username.me域名了</p>
+<p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
 ]]></content>
     
     <summary type="html">

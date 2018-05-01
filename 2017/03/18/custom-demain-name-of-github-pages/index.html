@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Create-Custom-Demain-Name-Of-Github-Pages/3.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Create-Custom-Demain-Name-Of-Github-Pages/4.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Create-Custom-Demain-Name-Of-Github-Pages/5.png">
-<meta property="og:updated_time" content="2018-04-21T09:21:18.459Z">
+<meta property="og:updated_time" content="2018-05-01T06:58:44.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Create Custom Demain Name Of Github Pages">
 <meta name="twitter:description" content="用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。
@@ -145,7 +145,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -421,7 +421,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/18/custom-demain-name-of-github-pages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/custom-demain-name-of-github-pages/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/18/custom-demain-name-of-github-pages/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -471,6 +471,12 @@
 <p>总的就做完了。</p>
 <hr>
 <p>最后提示下，Github pages中的CNAME的文本文件起到了两个作用：<br>（1）因为username.me解析的IP是Github pages对外提供的公用IP，只是靠IP无法定位到具体page库的所以CNAME里面的域名就起到了定位的作用，所以CNAME里面无对应的域名是会报404的错误的。<br>（2）那就是我说的重定向了，username.github.io域名被隐藏，转到username.me域名了</p>
+<p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
 
       
     </div>
@@ -500,9 +506,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GitHub-Pages/" rel="tag"># GitHub-Pages</a>
+            <a href="/tags/GitHub-Pages/" rel="tag"><i class="fa fa-tag"></i> GitHub-Pages</a>
           
-            <a href="/tags/Gandi/" rel="tag"># Gandi</a>
+            <a href="/tags/Gandi/" rel="tag"><i class="fa fa-tag"></i> Gandi</a>
           
         </div>
       
@@ -572,8 +578,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/18/custom-demain-name-of-github-pages/"
-           data-title="Create Custom Demain Name Of Github Pages" data-url="https://cindygithub2016.github.io/blog/2017/03/18/custom-demain-name-of-github-pages/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -838,32 +847,38 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cindynx"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'cindynx';
+      var disqus_identifier = '2017/03/18/custom-demain-name-of-github-pages/';
+
+      var disqus_title = "Create Custom Demain Name Of Github Pages";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
-
-
-
 
 
 

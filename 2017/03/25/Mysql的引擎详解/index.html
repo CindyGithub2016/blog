@@ -124,7 +124,7 @@
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Mysql的引擎详解/1.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Mysql的引擎详解/2.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/Mysql的引擎详解/3.png">
-<meta property="og:updated_time" content="2017-03-27T15:47:16.000Z">
+<meta property="og:updated_time" content="2018-05-01T07:00:44.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql的引擎详解">
 <meta name="twitter:description" content="数据库的定义我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。
@@ -141,7 +141,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -417,7 +417,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/25/Mysql的引擎详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/25/Mysql的引擎详解/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/25/Mysql的引擎详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -484,7 +484,13 @@
 <p>提示：最后的归类总结跟引擎使用的索引有关，下节会讲到。</p>
 </blockquote>
 <h3 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h3><pre><code>$ create table MYTABLE2 (name VARCHAR(20), sex CHAR(1))ENGINE=MyISAM;
-</code></pre>
+</code></pre><p>（完）</p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
+
       
     </div>
 
@@ -513,11 +519,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Mysql/" rel="tag"># Mysql</a>
+            <a href="/tags/Mysql/" rel="tag"><i class="fa fa-tag"></i> Mysql</a>
           
-            <a href="/tags/InnoDB/" rel="tag"># InnoDB</a>
+            <a href="/tags/InnoDB/" rel="tag"><i class="fa fa-tag"></i> InnoDB</a>
           
-            <a href="/tags/MyISAM/" rel="tag"># MyISAM</a>
+            <a href="/tags/MyISAM/" rel="tag"><i class="fa fa-tag"></i> MyISAM</a>
           
         </div>
       
@@ -591,8 +597,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/25/Mysql的引擎详解/"
-           data-title="Mysql的引擎详解" data-url="https://cindygithub2016.github.io/blog/2017/03/25/Mysql的引擎详解/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -857,32 +866,38 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cindynx"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'cindynx';
+      var disqus_identifier = '2017/03/25/Mysql的引擎详解/';
+
+      var disqus_title = "Mysql的引擎详解";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
-
-
-
 
 
 

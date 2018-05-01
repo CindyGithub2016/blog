@@ -124,7 +124,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -405,7 +405,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/11/25/RabbitMQ使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/25/RabbitMQ使用/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/25/RabbitMQ使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -570,7 +570,7 @@ $ brew install rabbitmq
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/26/Mysql的索引详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/26/Mysql的索引详解/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/26/Mysql的索引详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -731,7 +731,7 @@ B+树作为索引结构索引很大，如下面一节提到的都是以索引文
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/25/Mysql的引擎详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/25/Mysql的引擎详解/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/25/Mysql的引擎详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -894,7 +894,7 @@ B+树作为索引结构索引很大，如下面一节提到的都是以索引文
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/25/Mysql的数据类型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/25/Mysql的数据类型/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/25/Mysql的数据类型/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1055,7 +1055,7 @@ B+树作为索引结构索引很大，如下面一节提到的都是以索引文
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/24/Mac下Mysql的安装与卸载/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/24/Mac下Mysql的安装与卸载/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/24/Mac下Mysql的安装与卸载/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1221,7 +1221,7 @@ $ mysql
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/03/18/custom-demain-name-of-github-pages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/18/custom-demain-name-of-github-pages/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/18/custom-demain-name-of-github-pages/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1535,32 +1535,31 @@ $ mysql
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"cindynx"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+
+    <script type="text/javascript">
+      var disqus_shortname = 'cindynx';
+      var disqus_identifier = 'index.html';
+
+      var disqus_title = "";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+
+    </script>
   
-
-
-
 
 
 
