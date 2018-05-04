@@ -89,7 +89,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="RabbitMQ," />
+  <meta name="keywords" content="Pear,Composer,Pecl,包管理," />
 
 
 
@@ -107,42 +107,28 @@
 
 
 
-<meta name="description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
-二、Mac下RabbitMQ安装
-使用Homebrew安装
-$ brew install rabbitmq
+<meta name="description" content="PHP社区提供了几个管理扩展和包的工具包括Pecl、Pear、Pear2和Composer。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。
 
-修改 ~/.bash_profile 配置环境变量：
-# RabbitMQ Config
-export PATH=$PATH:/usr/local/sb">
+首先我们要明白我们为什么需要扩展和包的管理器？原因是为了在安装使用扩展和包时，我们可以直接操作需要的内容而不用去考虑依赖的管理。那么下面就去比较这几款管理工具。
+一、定义下面简要介绍 Pear、Pear package、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RabbitMQ使用">
-<meta property="og:url" content="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/index.html">
+<meta property="og:title" content="PHP 包与扩展的管理工具Pear、Composer 与 Pecl">
+<meta property="og:url" content="https://cindygithub2016.github.io/blog/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/index.html">
 <meta property="og:site_name" content="Cindy's Blog">
-<meta property="og:description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
-二、Mac下RabbitMQ安装
-使用Homebrew安装
-$ brew install rabbitmq
+<meta property="og:description" content="PHP社区提供了几个管理扩展和包的工具包括Pecl、Pear、Pear2和Composer。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。
 
-修改 ~/.bash_profile 配置环境变量：
-# RabbitMQ Config
-export PATH=$PATH:/usr/local/sb">
-<meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/1.png">
-<meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/2.png">
-<meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/3.png">
-<meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/4.png">
-<meta property="og:updated_time" content="2018-05-01T13:55:17.544Z">
+首先我们要明白我们为什么需要扩展和包的管理器？原因是为了在安装使用扩展和包时，我们可以直接操作需要的内容而不用去考虑依赖的管理。那么下面就去比较这几款管理工具。
+一、定义下面简要介绍 Pear、Pear package、">
+<meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/1.png">
+<meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/2.png">
+<meta property="og:updated_time" content="2018-05-04T02:25:48.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RabbitMQ使用">
-<meta name="twitter:description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
-二、Mac下RabbitMQ安装
-使用Homebrew安装
-$ brew install rabbitmq
+<meta name="twitter:title" content="PHP 包与扩展的管理工具Pear、Composer 与 Pecl">
+<meta name="twitter:description" content="PHP社区提供了几个管理扩展和包的工具包括Pecl、Pear、Pear2和Composer。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。
 
-修改 ~/.bash_profile 配置环境变量：
-# RabbitMQ Config
-export PATH=$PATH:/usr/local/sb">
-<meta name="twitter:image" content="https://cindygithub2016.github.io/blog/uploads/RabbitMQ使用/1.png">
+首先我们要明白我们为什么需要扩展和包的管理器？原因是为了在安装使用扩展和包时，我们可以直接操作需要的内容而不用去考虑依赖的管理。那么下面就去比较这几款管理工具。
+一、定义下面简要介绍 Pear、Pear package、">
+<meta name="twitter:image" content="https://cindygithub2016.github.io/blog/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/1.png">
 
 
 
@@ -170,13 +156,13 @@ export PATH=$PATH:/usr/local/sb">
 
 
 
-  <link rel="canonical" href="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/"/>
+  <link rel="canonical" href="https://cindygithub2016.github.io/blog/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/"/>
 
 
 
 
 
-  <title> RabbitMQ使用 | Cindy's Blog </title>
+  <title> PHP 包与扩展的管理工具Pear、Composer 与 Pecl | Cindy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -349,7 +335,7 @@ export PATH=$PATH:/usr/local/sb">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/">
+    <link itemprop="mainEntityOfPage" href="https://cindygithub2016.github.io/blog/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cindy">
@@ -370,7 +356,7 @@ export PATH=$PATH:/usr/local/sb">
             
             
               
-                RabbitMQ使用
+                PHP 包与扩展的管理工具Pear、Composer 与 Pecl
               
             
           </h1>
@@ -385,8 +371,8 @@ export PATH=$PATH:/usr/local/sb">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T15:59:26+08:00">
-                2017-11-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T09:52:27+08:00">
+                2018-05-04
               </time>
             
 
@@ -408,8 +394,8 @@ export PATH=$PATH:/usr/local/sb">
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/RabbitMQ/" itemprop="url" rel="index">
-                    <span itemprop="name">RabbitMQ</span>
+                  <a href="/categories/包与扩展管理工具/" itemprop="url" rel="index">
+                    <span itemprop="name">包与扩展管理工具</span>
                   </a>
                 </span>
 
@@ -426,8 +412,8 @@ export PATH=$PATH:/usr/local/sb">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/25/RabbitMQ使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/25/RabbitMQ使用/" itemprop="commentCount"></span>
+                <a href="/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -458,122 +444,171 @@ export PATH=$PATH:/usr/local/sb">
       
 
       
-        <h3 id="一、RabbitMQ的定义"><a href="#一、RabbitMQ的定义" class="headerlink" title="一、RabbitMQ的定义"></a>一、RabbitMQ的定义</h3><p>RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。</p>
-<h3 id="二、Mac下RabbitMQ安装"><a href="#二、Mac下RabbitMQ安装" class="headerlink" title="二、Mac下RabbitMQ安装"></a>二、Mac下RabbitMQ安装</h3><ol>
-<li><p>使用Homebrew安装</p>
-<pre><code>$ brew install rabbitmq
+        <blockquote>
+<p>PHP社区提供了几个管理扩展和包的工具包括<a href="http://pecl.php.net/" target="_blank" rel="external">Pecl</a>、<a href="http://pear.php.net/" target="_blank" rel="external">Pear</a>、<a href="https://pear2.php.net/" target="_blank" rel="external">Pear2</a>和<a href="https://getcomposer.org/" target="_blank" rel="external">Composer</a>。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。</p>
+</blockquote>
+<p>首先我们要明白我们为什么需要扩展和包的管理器？原因是为了在安装使用扩展和包时，我们可以直接操作需要的内容而不用去考虑依赖的管理。那么下面就去比较这几款管理工具。</p>
+<h3 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h3><p>下面简要介绍 Pear、Pear package、Pear installer、Pear2、Pyrus、Composer、Pecl 定义。</p>
+<h4 id="Pear"><a href="#Pear" class="headerlink" title="Pear"></a>Pear</h4><p>Pear 是 PHP 扩展与应用库（the PHP Extension and Application Repository）的缩写，是一个 PHP 扩展及应用的一个代码仓库。Pear 仓库代码是以包（package）分区，每一个<code>Pear package</code>都是一个独立的项目有着自己独立的开发团队、版本控制、文档和其他包的依赖关系信息。Pear package 是以 phar、tar 或 zip 发布的，而为了去浏览并搜索 Pear package、查看最新发行版、下载 Pear package 就有包管理器<code>Pear installer</code>。</p>
+<h4 id="Pear2"><a href="#Pear2" class="headerlink" title="Pear2"></a>Pear2</h4><p>Pear2 是下一代的 Pear 代码仓库，在使用性、速度、安全上都有改进。而 Pyrus 是下一代的 Pear installer，是使用 PHP 编写的，然后压缩成 phar 格式。</p>
+<h4 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h4><p>Composer 是 PHP 中的应用程序级的包依赖管理器。用于管理（安装/更新）你项目中申明的依赖库。而 Composer 的包信息存储库使 Packagist。</p>
+<h4 id="Pecl"><a href="#Pecl" class="headerlink" title="Pecl"></a>Pecl</h4><p>Pecl 是 PHP 扩展库仓库（The PHP Extension Community Library）的缩写，Pecl 扩展库同样是以包（package）分区，但是这里的包指的是使用 C、C++ 编写的动态链接库扩展，在编译安装后通过 php.ini 加载，随 PHP 进程被装入内存。</p>
+<h3 id="二、发布时间轴"><a href="#二、发布时间轴" class="headerlink" title="二、发布时间轴"></a>二、发布时间轴</h3><p><img src="/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/1.png" alt="图片描述"></p>
+<h3 id="三、Mac-安装与使用"><a href="#三、Mac-安装与使用" class="headerlink" title="三、Mac 安装与使用"></a>三、Mac 安装与使用</h3><h4 id="Pear-1"><a href="#Pear-1" class="headerlink" title="Pear"></a>Pear</h4><p>Pear 安装主要是安装 Pear installer 和 Pyrus 这两个包管理器，然后通过包管理器安装其他 Pear package。</p>
+<h5 id="（1）Pear-installer"><a href="#（1）Pear-installer" class="headerlink" title="（1）Pear installer"></a>（1）Pear installer</h5><p>如果你安装的是PHP (&gt; 4.3.0)，并且编译时并未使用“./configure flag –without-pear”选项，那么 Pear installer 的安装已集成在系统里。但如果你安装的 PHP(&lt; 4.3.0)，那么你就需要手动安装 Pear installer。</p>
+<ol>
+<li><p>下载 go-pear.phar 文件</p>
+<pre><code>$ curl -O https://pear.php.net/go-pear.phar
 </code></pre></li>
-<li><p>修改 ~/.bash_profile 配置环境变量：</p>
-<pre><code># RabbitMQ Config
-export PATH=$PATH:/usr/local/sbin
+<li><p>全局安装 Pear 命令和安装一些 Pear 包</p>
+<pre><code>$ sudo php -d detect_unicode=0 go-pear.phar
 </code></pre></li>
-<li><p>重启配置</p>
-<pre><code>$ source ~/.bash_profile
+<li><p>配置 Pear 进行安装</p>
+<pre><code>$ 输入1，然后按下 Enter
+$ 输入 /usr/local/pear，然后按下 Enter
+$ 输入4，然后按下 Enter
+$ 输入 /usr/local/bin，然后按下 Enter
+$ 再按下 Enter 一次，让其默认
+$ 安装完成
 </code></pre></li>
-<li><p>启动mq服务（后台启动为rabbitmq-server -detached）</p>
-<pre><code>$ rabbitmq-server 
+<li><p>查看版本</p>
+<pre><code>$ pear -V
 </code></pre></li>
-<li><p>登录管理界面 <a href="http://127.0.0.1:15672" target="_blank" rel="external">http://127.0.0.1:15672</a> 账号密码为：guest</p>
+<li><p>安装 Pear package 名称为 mypear</p>
+<pre><code>$ sudo pear install mypear
+</code></pre></li>
+<li><p>使用安装包 mypear</p>
 </li>
 </ol>
-<h3 id="三、客户端"><a href="#三、客户端" class="headerlink" title="三、客户端"></a>三、客户端</h3><p>RabbitMQ官方提供了三种PHP可用的扩展：php-amqp，php-rabbit，php-amqplib</p>
-<h4 id="php-amqplib-安装"><a href="#php-amqplib-安装" class="headerlink" title="php-amqplib 安装"></a>php-amqplib 安装</h4><p>php的客户端现在常用的是php-amqplib</p>
-<h5 id="（1）直接拉取github上面的代码"><a href="#（1）直接拉取github上面的代码" class="headerlink" title="（1）直接拉取github上面的代码"></a>（1）直接拉取github上面的代码</h5><pre><code>$ git clone https://github.com/php-amqplib/php-amqplib.git
-</code></pre><h5 id="（2）composer安装（官网提供）"><a href="#（2）composer安装（官网提供）" class="headerlink" title="（2）composer安装（官网提供）"></a>（2）composer安装（官网提供）</h5><ol>
-<li><p>将composer.json文件添加到您的项目中</p>
+<p>因为 Pear 库中的包都是由 PHP 编写的的，所以使用只需要在代码层手动 require/include 引入文件</p>
+<h5 id="（2）Pyrus"><a href="#（2）Pyrus" class="headerlink" title="（2）Pyrus"></a>（2）Pyrus</h5><ol>
+<li><p>Pyrus 正常工作需要 phar、simplexml、libxml2、spl 和 pcre 扩展，在 PHP (&gt; 5.3.0) 中是默认开启的</p>
+</li>
+<li><p>下载文件 pyrus.phar</p>
+<pre><code>$ wget http://pear2.php.net/pyrus.phar
+</code></pre></li>
+<li><p>第一次使用先运行<code>php pyrus.phar</code></p>
+<pre><code>$ php pyrus.phar
+$ 输入 yes，然后按下Enter
+$ 输入你安装包存放的位置 /Users/my-project，然后按下Enter
+$ 安装完成
+</code></pre></li>
+<li><p>查看版本</p>
+<pre><code>$ php pyrus.phar --version
+</code></pre></li>
+<li><p>安装 Pear package 名称为 mypear</p>
+<pre><code>$ php pyrus.phar install mypear
+</code></pre></li>
+<li><p>使用安装包 mypear</p>
+<pre><code>（1）因为 Pear 库中的包都是由 PHP 编写的，所以使用只需要在代码层手动 require/include 引入文件，但require_once 不被允许
+
+（2）Pyrus 可以使用自带的 autoloader 自动引入
+</code></pre></li>
+</ol>
+<h4 id="Pecl-1"><a href="#Pecl-1" class="headerlink" title="Pecl"></a>Pecl</h4><p>Pecl 可以通过 Pear 的 Package Manager 的安装管理方式，来进行下载和安装。</p>
+<p><img src="/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/2.png" alt="图片描述"></p>
+<p>安装成功</p>
+<p>而使用 Pecl 扩展库必须要经过下载扩展库、编译、安装、然后加载。而加载</p>
+<ol>
+<li><p>下载 Pecl 扩展库 extname</p>
+<p>（1）通过 Pear 下载 Pecl 扩展库</p>
+<pre><code>$ pecl install extname
+</code></pre><p>（2）官网下载：<a href="http://pecl.php.net/" target="_blank" rel="external">http://pecl.php.net/</a> </p>
+<p>（3）SVN 下载，大多数 Pecl 扩展库也在 <a href="http://svn.php.net/viewvc/pecl/" target="_blank" rel="external">SVN</a> 中</p>
+<pre><code>$ svn checkout http://svn.php.net/repository/pecl/extname/trunk extname
+</code></pre></li>
+<li><p>编译、安装</p>
+<p>（1）通过 Pear 下载编译共享 Pecl 扩展库 extname</p>
+<pre><code>$ pecl install extname
+
+这个过程下载 extname 的源代码，编译之，并将创建 extname.so 放置于 PHP 的扩展库目录中。
+</code></pre><p>（2）通过 phpize 编译共享 Pecl 扩展库 extname</p>
+<pre><code>1. 下载 extname 源代码
+
+2. 进入 extname 目录
+
+    $ cd extname
+
+3. 准备 PHP 扩展库的编译环境
+
+    $ phpize
+
+4. 编译
+
+    $ ./configure
+    $ make
+    $ make install
+
+ 成功的安装并将创建 extname.so 并放置于 PHP 的扩展库目录中。
+</code></pre></li>
+<li><p>加载</p>
+<p>（1）通过 php.ini 加载 extname.so</p>
+<pre><code>1）：Windows上是加载扩展的动态链接库后缀是“.dll”，在 Unix 或 Linux 上是“.so”
+
+2）：修改 php.ini，扩展已经在 php.ini 里。如果有 extension=extname.so 那么去掉前面“;”，或者直接添加 extension=extname.so
+</code></pre></li>
+<li><p>按照扩展文档方式启用扩展</p>
+</li>
+</ol>
+<h4 id="Composer-1"><a href="#Composer-1" class="headerlink" title="Composer"></a>Composer</h4><ol>
+<li><p>Composer 需要 PHP（&gt; 5.3.2）</p>
+</li>
+<li><p>下载 composer.phar 到当前目录</p>
+<pre><code>$ curl -sS https://getcomposer.org/installer | php
+</code></pre></li>
+<li><p>运行 Composer</p>
+<pre><code>$ php composer.phar
+</code></pre></li>
+<li><p>查看版本</p>
+<pre><code>$ php composer.phar -V
+</code></pre></li>
+<li><p>下载安装包 package</p>
+<pre><code>$ php composer.phar install package
+</code></pre></li>
+<li><p>使用安装包</p>
+<p>（1）使用 autoloader 自动加载<br>因为 Composer 生成了一个 vendor/autoload.php 文件，可以直接 require/include 引入这个文件。</p>
+</li>
+</ol>
+<h3 id="四、比较"><a href="#四、比较" class="headerlink" title="四、比较"></a>四、比较</h3><h4 id="扩展与包"><a href="#扩展与包" class="headerlink" title="扩展与包"></a>扩展与包</h4><ol>
+<li><p>PHP的扩展（extension）这里应称为“模块（module）”是 C、C++ 编写的功能合集，而包（package）是 PHP 编写的功能合集</p>
+</li>
+<li><p>PHP的包（package）以动态链接 .dll、.so 形式加载，而包则是直接引入通过 require/include 方式加載</p>
+</li>
+</ol>
+<p>所以，Pecl 和 Pear 是互为补充，管理者扩展与包。</p>
+<h4 id="Pear-installer-与-Composer"><a href="#Pear-installer-与-Composer" class="headerlink" title="Pear installer 与 Composer"></a>Pear installer 与 Composer</h4><p>Composer 能做 Pear installer 所有的工作，并且已经取代 Pear installer。就像 Pear 官方文档里面“If you read tweets and forums you’ll get that impression that nobody uses PEAR anymore, and everyone is using composer now.”说的，表明所有人都是在使用 Composer。其中原因有二：</p>
+<ol>
+<li><p>Pear installer 作为系统级软件包，通常需要 root 或管理员权限。并且对于一台机器上多个项目很难使用不同版本库，但 Composer 只需你在项目根目录下修改 composer.json 文件后 update 就可以对该项目的依赖库进行版本的修改。</p>
+</li>
+<li><p>Pear installer 依赖关系模糊，但 Composer 有申明依赖关系的文件 composer.json（位于项目根目录下），并且还有 composer.lock（位于项目根目录下）文件类似锁文件会使任何人建立项目都将下载与指定版本完全相同的依赖，从而减轻潜在的错误对部署的影响。</p>
+</li>
+</ol>
+<h3 id="五、使用-Composer-安装-Pear-package"><a href="#五、使用-Composer-安装-Pear-package" class="headerlink" title="五、使用 Composer 安装 Pear package"></a>五、使用 Composer 安装 Pear package</h3><p>既然 Pear installer 已经完全被 Composer 取代了，那么 Pear 库里面的一些 Pear package 我们是否也可以使用 Composer 包管理器来安装？毕竟 Pear 库有 Packagist（Composer 的包信息存储库） 没有的扩展包。所以下面介绍如何使用 Composer 来安装 Pear package。</p>
+<ol>
+<li><p>修改 Composer 获取包的渠道为“pear”，require 下载该渠道下的扩展包，并将 pear-pear2 作为包前缀避免冲突</p>
 <pre><code>{
-     “require”：{
-         “php-amqplib / php-amqplib”：“&gt; = 2.6.1”
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;pear&quot;,
+            &quot;url&quot;: &quot;https://pear2.php.net&quot;
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;pear-pear2.php.net/PEAR2_Text_Markdown&quot;: &quot;*&quot;,
+        &quot;pear-pear2/PEAR2_HTTP_Request&quot;: &quot;*&quot;
     }
 }
 </code></pre></li>
-<li><p>下载依赖</p>
-<pre><code>$ composer install
-</code></pre></li>
+<li><p>完成后，代码位于项目目录 vendor 文件夹中。应用时直接使用 autoloader 自动加载</p>
+</li>
 </ol>
-<h3 id="四、概念"><a href="#四、概念" class="headerlink" title="四、概念"></a>四、概念</h3><p><img src="/uploads/RabbitMQ使用/1.png" alt="图片描述"></p>
-<h4 id="Virtual-vhosts"><a href="#Virtual-vhosts" class="headerlink" title="Virtual vhosts"></a>Virtual vhosts</h4><p>virtual vhosts是一个命名空间，可以存在多个exchange和queue。实现了环境（用户，用户组，exchange，queue）隔离，是权限控制的最小粒度。默认的virtual host为/。</p>
-<h4 id="Exchange-交换机"><a href="#Exchange-交换机" class="headerlink" title="Exchange(交换机)"></a>Exchange(交换机)</h4><p>接受producer发送的消息，并根据binding绑定规则转发到对应的队列。默认是无名交换使用空字符串标识。exchange type(交换机类型)包含四种类型：direct，topic，headers，fanout</p>
-<h5 id="（1）direct"><a href="#（1）direct" class="headerlink" title="（1）direct"></a>（1）direct</h5><p>转发消息到routigKey指定的队列</p>
-<p><img src="/uploads/RabbitMQ使用/2.png" alt="图片描述"></p>
-<h5 id="（2）topic"><a href="#（2）topic" class="headerlink" title="（2）topic"></a>（2）topic</h5><p>类似于direct类型，只不过routigKey为一个句点号“.”分隔的字符串</p>
-<ul>
-<li>可以替代一个字。</li>
-</ul>
-<p>＃ 可以替换零个或多个单词。</p>
-<p><img src="/uploads/RabbitMQ使用/3.png" alt="图片描述"></p>
-<h5 id="（3）headers"><a href="#（3）headers" class="headerlink" title="（3）headers"></a>（3）headers</h5><p>根据发送的消息内容中的headers属性进行匹配。</p>
-<h5 id="（4）fanout"><a href="#（4）fanout" class="headerlink" title="（4）fanout"></a>（4）fanout</h5><p>将所有收到的消息广播到所有已知的队列。</p>
-<p><img src="/uploads/RabbitMQ使用/4.png" alt="图片描述"></p>
-<h4 id="Queue-消息队列"><a href="#Queue-消息队列" class="headerlink" title="Queue(消息队列)"></a>Queue(消息队列)</h4><p>queue是mq内部对象，用于存储未被customer消费的消息。相同属性的queue可以重复定义，每个消息都会被投入到一个或多个队列。</p>
-<h4 id="Binding-绑定"><a href="#Binding-绑定" class="headerlink" title="Binding(绑定)"></a>Binding(绑定)</h4><p>binding是将exchange和queue按照路由规则绑定起来。可以理解为binding是exchange和queue之间的关系</p>
-<h4 id="Connection（连接）"><a href="#Connection（连接）" class="headerlink" title="Connection（连接）"></a>Connection（连接）</h4><p>消息tcp连接</p>
-<h4 id="Channel-信道"><a href="#Channel-信道" class="headerlink" title="Channel(信道)"></a>Channel(信道)</h4><p>每个connection里，可建立多个channel，每个channel代表一个会话任务。做到尽量共用connection</p>
-<h3 id="五、RabbitMQ使用示例"><a href="#五、RabbitMQ使用示例" class="headerlink" title="五、RabbitMQ使用示例"></a>五、RabbitMQ使用示例</h3><ol>
-<li><p>send.php:</p>
-<pre><code>require_once __DIR__ . &apos;/vendor/autoload.php&apos;;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Message\AMQPMessage;
-
-// 创建连接
-$connection = new AMQPStreamConnection(&apos;localhost&apos;, 5672, &apos;guest&apos;, &apos;guest&apos;);
-// 创建channel，多个channel可以共用连接
-$channel = $connection-&gt;channel();
-
-// 创建交换机以及队列（如果已经存在，不需要重新再次创建并且绑定）
-
-// 创建直连的交换机
-$channel-&gt;exchange_declare(&apos;direct_logs&apos;, &apos;direct&apos;, false, false, false);
-// 创建队列
-$channel-&gt;queue_declare(&apos;hello&apos;, false, false, false, false);
-// 交换机跟队列的绑定，
-$channel-&gt;queue_bind(&apos;hello&apos;, &apos;direct_logs&apos;, &apos;routigKey&apos;);
-
-// 设置消息bady传送字符串logs(消息只能为字符串，建议消息均json格式)
-$msg = new AMQPMessage(&apos;logs&apos;);
-// 发送数据到对应的交换机direct_logs并设置对应的routigKey
-$channel-&gt;basic_publish($msg, &apos;direct_logs&apos;, &apos;routigKey&apos;);
-</code></pre></li>
-<li><p>receive.php:</p>
-<pre><code>require_once __DIR__ . &apos;/vendor/autoload.php&apos;;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-
-// 创建连接
-$connection = new AMQPStreamConnection(&apos;localhost&apos;, 5672, &apos;guest&apos;, &apos;guest&apos;);
-// 创建channel，多个channel可以共用连接
-$channel = $connection-&gt;channel();
-
-// 可能会在数据发布之前启动消费者，所以我们要确保队列存在，然后再尝试从中消费消息。
-
-// 创建直连的交换机
-$channel-&gt;exchange_declare(&apos;direct_logs&apos;, &apos;direct&apos;, false, false, false);
-// 创建队列
-$channel-&gt;queue_declare(&apos;hello&apos;, false, false, false, false);
-// 交换机跟队列的绑定，
-$channel-&gt;queue_bind(&apos;hello&apos;, &apos;direct_logs&apos;, &apos;routigKey&apos;);
-
-// 回调函数
-$callback = function ($msg) {
-    echo $msg-&gt;body;
-};
-
-// 启动队列消费者
-$channel-&gt;basic_consume(&apos;hello3&apos;, &apos;&apos;, false, true, false, false, $callback);
-// 判断是否存在回调函数
-while(count($channel-&gt;callbacks)) {
-    // 此处为执行回调函数
-    $channel-&gt;wait();
-}
-</code></pre></li>
-</ol>
-<h3 id="六、RabbitMQ备注"><a href="#六、RabbitMQ备注" class="headerlink" title="六、RabbitMQ备注"></a>六、RabbitMQ备注</h3><ol>
-<li>非持久化会导致，队列重启，数据丢失</li>
-<li>exchange持久化，在声明durable时参数指定为true</li>
-<li>queue持久化，在声明durable时参数指定true</li>
-<li>消息持久化，实例化AMQPMessage类时指定delivery_mode为2</li>
-<li>exchange和queue是否持久化需要一致才能绑定</li>
-<li>消费者设置手动ack，在声明no_ack参数时指定false</li>
-<li>队列消息异常需要将消息删除并再次发送同样的消息置于末尾并手动记录日志</li>
+<h3 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h3><p>如果是包使用 Composer 安装使用，如果是涉及底层扩展则使用 Pecl（也可以使用其他编译安装方式） 安装。</p>
+<h3 id="七、参考资料"><a href="#七、参考资料" class="headerlink" title="七、参考资料"></a>七、参考资料</h3><ol>
+<li><a href="https://www.ibm.com/developerworks/cn/linux/sdk/php/pear1/index.html" target="_blank" rel="external">PEAR简介:用PEAR来写你的下一个php程序</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-php-pecl/index.html" target="_blank" rel="external">基于 PHP5 面向对象特性的 PECL 扩展 Perl 与 PDO 编程</a></li>
+<li><a href="http://php.net/manual/zh/install.pecl.php#install.pecl" target="_blank" rel="external">PECL 扩展库安装</a></li>
+<li><a href="https://stackoverflow.com/questions/5409039/what-is-the-difference-between-pear-and-pear2" target="_blank" rel="external">What is the difference between PEAR and PEAR2?</a></li>
+<li><a href="https://hk.saowen.com/a/5c0e71a1f917c1f76b4d5732ff0aa7e242b2d6cdcb0a17d5c36d39a221cdfb00" target="_blank" rel="external">PHP7 學習筆記</a></li>
 </ol>
 <p>（完）</p>
 <ul>
@@ -610,7 +645,13 @@ while(count($channel-&gt;callbacks)) {
       
         <div class="post-tags">
           
-            <a href="/tags/RabbitMQ/" rel="tag"><i class="fa fa-tag"></i> RabbitMQ</a>
+            <a href="/tags/Pear/" rel="tag"><i class="fa fa-tag"></i> Pear</a>
+          
+            <a href="/tags/Composer/" rel="tag"><i class="fa fa-tag"></i> Composer</a>
+          
+            <a href="/tags/Pecl/" rel="tag"><i class="fa fa-tag"></i> Pecl</a>
+          
+            <a href="/tags/包管理/" rel="tag"><i class="fa fa-tag"></i> 包管理</a>
           
         </div>
       
@@ -623,8 +664,8 @@ while(count($channel-&gt;callbacks)) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/26/Mysql的索引详解/" rel="next" title="Mysql的索引详解">
-                <i class="fa fa-chevron-left"></i> Mysql的索引详解
+              <a href="/2017/11/25/RabbitMQ使用/" rel="next" title="RabbitMQ使用">
+                <i class="fa fa-chevron-left"></i> RabbitMQ使用
               </a>
             
           </div>
@@ -632,10 +673,6 @@ while(count($channel-&gt;callbacks)) {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/" rel="prev" title="PHP 包与扩展的管理工具Pear、Composer 与 Pecl">
-                PHP 包与扩展的管理工具Pear、Composer 与 Pecl <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -812,7 +849,7 @@ while(count($channel-&gt;callbacks)) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、RabbitMQ的定义"><span class="nav-number">1.</span> <span class="nav-text">一、RabbitMQ的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、Mac下RabbitMQ安装"><span class="nav-number">2.</span> <span class="nav-text">二、Mac下RabbitMQ安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、客户端"><span class="nav-number">3.</span> <span class="nav-text">三、客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#php-amqplib-安装"><span class="nav-number">3.1.</span> <span class="nav-text">php-amqplib 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）直接拉取github上面的代码"><span class="nav-number">3.1.1.</span> <span class="nav-text">（1）直接拉取github上面的代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）composer安装（官网提供）"><span class="nav-number">3.1.2.</span> <span class="nav-text">（2）composer安装（官网提供）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、概念"><span class="nav-number">4.</span> <span class="nav-text">四、概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Virtual-vhosts"><span class="nav-number">4.1.</span> <span class="nav-text">Virtual vhosts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Exchange-交换机"><span class="nav-number">4.2.</span> <span class="nav-text">Exchange(交换机)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）direct"><span class="nav-number">4.2.1.</span> <span class="nav-text">（1）direct</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）topic"><span class="nav-number">4.2.2.</span> <span class="nav-text">（2）topic</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）headers"><span class="nav-number">4.2.3.</span> <span class="nav-text">（3）headers</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（4）fanout"><span class="nav-number">4.2.4.</span> <span class="nav-text">（4）fanout</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Queue-消息队列"><span class="nav-number">4.3.</span> <span class="nav-text">Queue(消息队列)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binding-绑定"><span class="nav-number">4.4.</span> <span class="nav-text">Binding(绑定)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Connection（连接）"><span class="nav-number">4.5.</span> <span class="nav-text">Connection（连接）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-信道"><span class="nav-number">4.6.</span> <span class="nav-text">Channel(信道)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、RabbitMQ使用示例"><span class="nav-number">5.</span> <span class="nav-text">五、RabbitMQ使用示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、RabbitMQ备注"><span class="nav-number">6.</span> <span class="nav-text">六、RabbitMQ备注</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、定义"><span class="nav-number">1.</span> <span class="nav-text">一、定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pear"><span class="nav-number">1.1.</span> <span class="nav-text">Pear</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pear2"><span class="nav-number">1.2.</span> <span class="nav-text">Pear2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Composer"><span class="nav-number">1.3.</span> <span class="nav-text">Composer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pecl"><span class="nav-number">1.4.</span> <span class="nav-text">Pecl</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、发布时间轴"><span class="nav-number">2.</span> <span class="nav-text">二、发布时间轴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、Mac-安装与使用"><span class="nav-number">3.</span> <span class="nav-text">三、Mac 安装与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pear-1"><span class="nav-number">3.1.</span> <span class="nav-text">Pear</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）Pear-installer"><span class="nav-number">3.1.1.</span> <span class="nav-text">（1）Pear installer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）Pyrus"><span class="nav-number">3.1.2.</span> <span class="nav-text">（2）Pyrus</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pecl-1"><span class="nav-number">3.2.</span> <span class="nav-text">Pecl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Composer-1"><span class="nav-number">3.3.</span> <span class="nav-text">Composer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、比较"><span class="nav-number">4.</span> <span class="nav-text">四、比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展与包"><span class="nav-number">4.1.</span> <span class="nav-text">扩展与包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pear-installer-与-Composer"><span class="nav-number">4.2.</span> <span class="nav-text">Pear installer 与 Composer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、使用-Composer-安装-Pear-package"><span class="nav-number">5.</span> <span class="nav-text">五、使用 Composer 安装 Pear package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、总结"><span class="nav-number">6.</span> <span class="nav-text">六、总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、参考资料"><span class="nav-number">7.</span> <span class="nav-text">七、参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -959,9 +996,9 @@ while(count($channel-&gt;callbacks)) {
 
     <script type="text/javascript">
       var disqus_shortname = 'nanxin-me';
-      var disqus_identifier = '2017/11/25/RabbitMQ使用/';
+      var disqus_identifier = '2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/';
 
-      var disqus_title = "RabbitMQ使用";
+      var disqus_title = "PHP 包与扩展的管理工具Pear、Composer 与 Pecl";
 
 
       function run_disqus_script(disqus_script) {
