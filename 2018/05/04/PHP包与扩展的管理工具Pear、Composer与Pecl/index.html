@@ -121,7 +121,7 @@ PearPear 是 PHP 扩展与应用库（the PHP Extension">
 PearPear 是 PHP 扩展与应用库（the PHP Extension">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/1.png">
 <meta property="og:image" content="https://cindygithub2016.github.io/blog/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/2.png">
-<meta property="og:updated_time" content="2018-05-04T04:50:57.373Z">
+<meta property="og:updated_time" content="2018-05-04T05:49:22.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 包与扩展的管理工具Pear、Composer 与 Pecl">
 <meta name="twitter:description" content="PHP社区提供了几个管理扩展和包的工具包括Pecl、Pear、Pear2和Composer。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。
@@ -448,9 +448,10 @@ PearPear 是 PHP 扩展与应用库（the PHP Extension">
 <p>PHP社区提供了几个管理扩展和包的工具包括<a href="http://pecl.php.net/" target="_blank" rel="external">Pecl</a>、<a href="http://pear.php.net/" target="_blank" rel="external">Pear</a>、<a href="https://pear2.php.net/" target="_blank" rel="external">Pear2</a>和<a href="https://getcomposer.org/" target="_blank" rel="external">Composer</a>。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。</p>
 </blockquote>
 <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>下面简要介绍 Pear、Pear package、Pear installer、Pear2、Pyrus、Composer、Pecl。</p>
-<h4 id="Pear"><a href="#Pear" class="headerlink" title="Pear"></a>Pear</h4><p>Pear 是 PHP 扩展与应用库（the PHP Extension and Application Repository）的缩写，是一个 PHP 扩展及应用的一个代码仓库。Pear 仓库代码是以包（package）分区，每一个<code>Pear package</code>都是一个独立的项目有着自己独立的开发团队、版本控制、文档和其他包的依赖关系信息。Pear package 是以 phar、tar 或 zip 发布的，而为了去浏览并搜索 Pear package、查看最新发行版、下载 Pear package 就有包管理器<code>Pear installer</code>。</p>
-<h4 id="Pear2"><a href="#Pear2" class="headerlink" title="Pear2"></a>Pear2</h4><p>Pear2 是下一代的 Pear 代码仓库，在使用性、速度、安全上都有改进。Pyrus 是下一代的 Pear installer，是使用 PHP 编写的，然后压缩成 phar 格式。</p>
-<h4 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h4><p>Composer 是 PHP 中的应用程序级的包依赖管理器。用于管理（安装/更新）你项目中申明的依赖库。Composer 的包信息存储库是 Packagist。</p>
+<h4 id="Pear"><a href="#Pear" class="headerlink" title="Pear"></a>Pear</h4><p>Pear 是 PHP 扩展与应用库（the PHP Extension and Application Repository）的缩写，是一个 PHP 扩展及应用的一个代码仓库。Pear 仓库代码是以包（package）分区，每一个 <code>Pear package</code> 都是一个独立的项目有着自己独立的开发团队、版本控制、文档和其他包的依赖关系信息。Pear package 以 phar、tar 或 zip 发布。</p>
+<p>Pear 的包管理器是<code>Pear installer</code>，用来浏览并搜索 Pear package、查看最新发行版、下载 Pear package。</p>
+<h4 id="Pear2"><a href="#Pear2" class="headerlink" title="Pear2"></a>Pear2</h4><p>Pear2 是下一代的 Pear 代码仓库，在使用性、速度、安全上都有改进。Pear2 的包管理器 Pyrus 是下一代的 Pear installer，使用 PHP 编写，以 phar 格式发布。</p>
+<h4 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h4><p>Composer 是 PHP 中的应用程序级的包依赖管理器。用来管理（安装/更新）你项目中申明的依赖库。Composer 的包信息存储库是 Packagist。</p>
 <h4 id="Pecl"><a href="#Pecl" class="headerlink" title="Pecl"></a>Pecl</h4><p>Pecl 是 PHP 扩展社区仓库（The PHP Extension Community Library）的缩写，Pecl 扩展库的包（package）是使用 C、C++ 编写的动态链接库扩展，在编译安装后通过 php.ini 加载，随 PHP 进程被装入内存。</p>
 <h3 id="二、发布时间轴"><a href="#二、发布时间轴" class="headerlink" title="二、发布时间轴"></a>二、发布时间轴</h3><p><img src="/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/1.png" alt="图片描述"></p>
 <h3 id="三、Mac-安装与使用"><a href="#三、Mac-安装与使用" class="headerlink" title="三、Mac 安装与使用"></a>三、Mac 安装与使用</h3><h4 id="Pear-1"><a href="#Pear-1" class="headerlink" title="Pear"></a>Pear</h4><p>Pear 安装主要是安装 Pear installer 和 Pyrus 这两个包管理器，然后通过包管理器安装其他 Pear package。</p>
@@ -463,12 +464,19 @@ PearPear 是 PHP 扩展与应用库（the PHP Extension">
 <pre><code>$ sudo php -d detect_unicode=0 go-pear.phar
 </code></pre></li>
 <li><p>配置 Pear 进行安装</p>
-<pre><code>$ 输入1，然后按下 Enter
-$ 输入 /usr/local/pear，然后按下 Enter
-$ 输入4，然后按下 Enter
-$ 输入 /usr/local/bin，然后按下 Enter
-$ 再按下 Enter 一次，让其默认
-$ 安装完成
+<pre><code>1) 更改 Installation Base 位置
+
+ 输入1，然后按下 Enter
+ 输入 /usr/local/pear，然后按下 Enter
+
+2) 更改 Binaries directory 位置
+
+ 输入4，然后按下 Enter
+ 输入 /usr/local/bin，然后按下 Enter
+
+3）再按下 Enter 一次，让其默认
+
+4）安装完成
 </code></pre></li>
 <li><p>查看版本</p>
 <pre><code>$ pear -V
@@ -575,7 +583,7 @@ $ 安装完成
 </li>
 </ol>
 <p>所以，Pecl 和 Pear 是互为补充，管理者扩展与包。</p>
-<h4 id="Pear-installer-与-Composer"><a href="#Pear-installer-与-Composer" class="headerlink" title="Pear installer 与 Composer"></a>Pear installer 与 Composer</h4><p>Composer 能做 Pear installer 所有的工作，并且已经取代 Pear installer。就像 Pear 官方文档里面“If you read tweets and forums you’ll get that impression that nobody uses PEAR anymore, and everyone is using composer now.”说的，表明所有人都是在使用 Composer。其中原因有二：</p>
+<h4 id="Pear-installer-与-Composer"><a href="#Pear-installer-与-Composer" class="headerlink" title="Pear installer 与 Composer"></a>Pear installer 与 Composer</h4><p>Composer 虽然比 Pear 晚出现10多年，但就像 Pear 官方文档里面 “If you read tweets and forums you’ll get that impression that nobody uses PEAR anymore, and everyone is using composer now.” 说的，现在所有人都是在使用 Composer。因为 Pear installer 能的 Composer 都能做，并且能做的更好，但 Composer 能做的，Pear installer 却不一定能做。举两个例子：</p>
 <ol>
 <li><p>Pear installer 作为系统级软件包，通常需要 root 或管理员权限。并且对于一台机器上多个项目很难使用不同版本库，但 Composer 只需你在项目根目录下修改 composer.json 文件后 update 就可以对该项目的依赖库进行版本的修改。</p>
 </li>
