@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cindygithub2016.github.io/blog/"/>
-  <updated>2018-05-04T02:25:48.818Z</updated>
+  <updated>2018-05-04T03:18:25.870Z</updated>
   <id>https://cindygithub2016.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://cindygithub2016.github.io/blog/2018/05/04/PHP%E5%8C%85%E4%B8%8E%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Pear%E3%80%81Composer%E4%B8%8EPecl/"/>
     <id>https://cindygithub2016.github.io/blog/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/</id>
     <published>2018-05-04T01:52:27.000Z</published>
-    <updated>2018-05-04T02:25:48.818Z</updated>
+    <updated>2018-05-04T03:18:25.870Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>PHP社区提供了几个管理扩展和包的工具包括<a href="http://pecl.php.net/" target="_blank" rel="external">Pecl</a>、<a href="http://pear.php.net/" target="_blank" rel="external">Pear</a>、<a href="https://pear2.php.net/" target="_blank" rel="external">Pear2</a>和<a href="https://getcomposer.org/" target="_blank" rel="external">Composer</a>。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。</p>
@@ -191,7 +191,7 @@ $ 安装完成
 <p>（完）</p>
 <ul>
 <li>本文作者：Cindy</li>
-<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>本文标题：PHP 包与扩展的管理工具Pear、Composer 与 Pecl</li>
 <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
 </ul>
 ]]></content>
