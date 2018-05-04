@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cindygithub2016.github.io/blog/"/>
-  <updated>2018-05-04T04:35:45.175Z</updated>
+  <updated>2018-05-04T04:36:21.628Z</updated>
   <id>https://cindygithub2016.github.io/blog/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="https://cindygithub2016.github.io/blog/2018/05/04/PHP%E5%8C%85%E4%B8%8E%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Pear%E3%80%81Composer%E4%B8%8EPecl/"/>
     <id>https://cindygithub2016.github.io/blog/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/</id>
     <published>2018-05-04T01:52:27.000Z</published>
-    <updated>2018-05-04T04:35:45.175Z</updated>
+    <updated>2018-05-04T04:36:21.628Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>PHP社区提供了几个管理扩展和包的工具包括<a href="http://pecl.php.net/" target="_blank" rel="external">Pecl</a>、<a href="http://pear.php.net/" target="_blank" rel="external">Pear</a>、<a href="https://pear2.php.net/" target="_blank" rel="external">Pear2</a>和<a href="https://getcomposer.org/" target="_blank" rel="external">Composer</a>。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。</p>
 </blockquote>
-<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>下面简要介绍 Pear、Pear package、Pear installer、Pear2、Pyrus、Composer、Pecl 定义。</p>
+<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>下面简要介绍 Pear、Pear package、Pear installer、Pear2、Pyrus、Composer、Pecl。</p>
 <h4 id="Pear"><a href="#Pear" class="headerlink" title="Pear"></a>Pear</h4><p>Pear 是 PHP 扩展与应用库（the PHP Extension and Application Repository）的缩写，是一个 PHP 扩展及应用的一个代码仓库。Pear 仓库代码是以包（package）分区，每一个<code>Pear package</code>都是一个独立的项目有着自己独立的开发团队、版本控制、文档和其他包的依赖关系信息。Pear package 是以 phar、tar 或 zip 发布的，而为了去浏览并搜索 Pear package、查看最新发行版、下载 Pear package 就有包管理器<code>Pear installer</code>。</p>
 <h4 id="Pear2"><a href="#Pear2" class="headerlink" title="Pear2"></a>Pear2</h4><p>Pear2 是下一代的 Pear 代码仓库，在使用性、速度、安全上都有改进。而 Pyrus 是下一代的 Pear installer，是使用 PHP 编写的，然后压缩成 phar 格式。</p>
 <h4 id="Composer"><a href="#Composer" class="headerlink" title="Composer"></a>Composer</h4><p>Composer 是 PHP 中的应用程序级的包依赖管理器。用于管理（安装/更新）你项目中申明的依赖库。而 Composer 的包信息存储库使 Packagist。</p>
