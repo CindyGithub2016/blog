@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://cindygithub2016.github.io/blog/"/>
-  <updated>2018-05-04T05:49:22.183Z</updated>
-  <id>https://cindygithub2016.github.io/blog/</id>
+  <link href="https://nanxin.me/"/>
+  <updated>2018-05-04T10:17:23.991Z</updated>
+  <id>https://nanxin.me/</id>
   
   <author>
     <name>Cindy</name>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>PHP 包与扩展的管理工具Pear、Composer 与 Pecl</title>
-    <link href="https://cindygithub2016.github.io/blog/2018/05/04/PHP%E5%8C%85%E4%B8%8E%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Pear%E3%80%81Composer%E4%B8%8EPecl/"/>
-    <id>https://cindygithub2016.github.io/blog/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/</id>
+    <link href="https://nanxin.me/2018/05/04/PHP%E5%8C%85%E4%B8%8E%E6%89%A9%E5%B1%95%E7%9A%84%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7Pear%E3%80%81Composer%E4%B8%8EPecl/"/>
+    <id>https://nanxin.me/2018/05/04/PHP包与扩展的管理工具Pear、Composer与Pecl/</id>
     <published>2018-05-04T01:52:27.000Z</published>
-    <updated>2018-05-04T05:49:22.183Z</updated>
+    <updated>2018-05-04T10:17:23.991Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>PHP社区提供了几个管理扩展和包的工具包括<a href="http://pecl.php.net/" target="_blank" rel="external">Pecl</a>、<a href="http://pear.php.net/" target="_blank" rel="external">Pear</a>、<a href="https://pear2.php.net/" target="_blank" rel="external">Pear2</a>和<a href="https://getcomposer.org/" target="_blank" rel="external">Composer</a>。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。</p>
@@ -210,23 +210,23 @@ $ 安装完成
     
     </summary>
     
-      <category term="包与扩展管理工具" scheme="https://cindygithub2016.github.io/blog/categories/%E5%8C%85%E4%B8%8E%E6%89%A9%E5%B1%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
+      <category term="包与扩展管理工具" scheme="https://nanxin.me/categories/%E5%8C%85%E4%B8%8E%E6%89%A9%E5%B1%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Pear" scheme="https://cindygithub2016.github.io/blog/tags/Pear/"/>
+      <category term="Pear" scheme="https://nanxin.me/tags/Pear/"/>
     
-      <category term="Composer" scheme="https://cindygithub2016.github.io/blog/tags/Composer/"/>
+      <category term="Composer" scheme="https://nanxin.me/tags/Composer/"/>
     
-      <category term="Pecl" scheme="https://cindygithub2016.github.io/blog/tags/Pecl/"/>
+      <category term="Pecl" scheme="https://nanxin.me/tags/Pecl/"/>
     
-      <category term="包管理" scheme="https://cindygithub2016.github.io/blog/tags/%E5%8C%85%E7%AE%A1%E7%90%86/"/>
+      <category term="包管理" scheme="https://nanxin.me/tags/%E5%8C%85%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>RabbitMQ使用</title>
-    <link href="https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ%E4%BD%BF%E7%94%A8/"/>
-    <id>https://cindygithub2016.github.io/blog/2017/11/25/RabbitMQ使用/</id>
+    <link href="https://nanxin.me/2017/11/25/RabbitMQ%E4%BD%BF%E7%94%A8/"/>
+    <id>https://nanxin.me/2017/11/25/RabbitMQ使用/</id>
     <published>2017-11-25T07:59:26.000Z</published>
     <updated>2018-05-01T13:55:17.544Z</updated>
     
@@ -361,17 +361,17 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="RabbitMQ" scheme="https://cindygithub2016.github.io/blog/categories/RabbitMQ/"/>
+      <category term="RabbitMQ" scheme="https://nanxin.me/categories/RabbitMQ/"/>
     
     
-      <category term="RabbitMQ" scheme="https://cindygithub2016.github.io/blog/tags/RabbitMQ/"/>
+      <category term="RabbitMQ" scheme="https://nanxin.me/tags/RabbitMQ/"/>
     
   </entry>
   
   <entry>
     <title>Mysql的索引详解</title>
-    <link href="https://cindygithub2016.github.io/blog/2017/03/26/Mysql%E7%9A%84%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://cindygithub2016.github.io/blog/2017/03/26/Mysql的索引详解/</id>
+    <link href="https://nanxin.me/2017/03/26/Mysql%E7%9A%84%E7%B4%A2%E5%BC%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://nanxin.me/2017/03/26/Mysql的索引详解/</id>
     <published>2017-03-26T06:28:06.000Z</published>
     <updated>2018-05-01T13:58:17.256Z</updated>
     
@@ -415,19 +415,19 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://nanxin.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://nanxin.me/tags/Mysql/"/>
     
-      <category term="Index" scheme="https://cindygithub2016.github.io/blog/tags/Index/"/>
+      <category term="Index" scheme="https://nanxin.me/tags/Index/"/>
     
   </entry>
   
   <entry>
     <title>Mysql的引擎详解</title>
-    <link href="https://cindygithub2016.github.io/blog/2017/03/25/Mysql%E7%9A%84%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://cindygithub2016.github.io/blog/2017/03/25/Mysql的引擎详解/</id>
+    <link href="https://nanxin.me/2017/03/25/Mysql%E7%9A%84%E5%BC%95%E6%93%8E%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://nanxin.me/2017/03/25/Mysql的引擎详解/</id>
     <published>2017-03-25T10:01:13.000Z</published>
     <updated>2018-05-01T13:56:56.223Z</updated>
     
@@ -481,21 +481,21 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://nanxin.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://nanxin.me/tags/Mysql/"/>
     
-      <category term="InnoDB" scheme="https://cindygithub2016.github.io/blog/tags/InnoDB/"/>
+      <category term="InnoDB" scheme="https://nanxin.me/tags/InnoDB/"/>
     
-      <category term="MyISAM" scheme="https://cindygithub2016.github.io/blog/tags/MyISAM/"/>
+      <category term="MyISAM" scheme="https://nanxin.me/tags/MyISAM/"/>
     
   </entry>
   
   <entry>
     <title>Mysql的数据类型</title>
-    <link href="https://cindygithub2016.github.io/blog/2017/03/25/Mysql%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>https://cindygithub2016.github.io/blog/2017/03/25/Mysql的数据类型/</id>
+    <link href="https://nanxin.me/2017/03/25/Mysql%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://nanxin.me/2017/03/25/Mysql的数据类型/</id>
     <published>2017-03-25T03:32:33.000Z</published>
     <updated>2018-05-01T13:58:40.154Z</updated>
     
@@ -518,17 +518,17 @@ while(count($channel-&gt;callbacks)) {
     
     </summary>
     
-      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://nanxin.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://nanxin.me/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>Mac下Mysql的安装与卸载</title>
-    <link href="https://cindygithub2016.github.io/blog/2017/03/24/Mac%E4%B8%8BMysql%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/"/>
-    <id>https://cindygithub2016.github.io/blog/2017/03/24/Mac下Mysql的安装与卸载/</id>
+    <link href="https://nanxin.me/2017/03/24/Mac%E4%B8%8BMysql%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BD/"/>
+    <id>https://nanxin.me/2017/03/24/Mac下Mysql的安装与卸载/</id>
     <published>2017-03-24T08:25:11.000Z</published>
     <updated>2018-05-01T13:58:57.391Z</updated>
     
@@ -562,19 +562,19 @@ $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     
     </summary>
     
-      <category term="Mysql教程" scheme="https://cindygithub2016.github.io/blog/categories/Mysql%E6%95%99%E7%A8%8B/"/>
+      <category term="Mysql教程" scheme="https://nanxin.me/categories/Mysql%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Mysql" scheme="https://cindygithub2016.github.io/blog/tags/Mysql/"/>
+      <category term="Mysql" scheme="https://nanxin.me/tags/Mysql/"/>
     
-      <category term="Homebrew" scheme="https://cindygithub2016.github.io/blog/tags/Homebrew/"/>
+      <category term="Homebrew" scheme="https://nanxin.me/tags/Homebrew/"/>
     
   </entry>
   
   <entry>
     <title>Create Custom Demain Name Of Github Pages</title>
-    <link href="https://cindygithub2016.github.io/blog/2017/03/18/custom-demain-name-of-github-pages/"/>
-    <id>https://cindygithub2016.github.io/blog/2017/03/18/custom-demain-name-of-github-pages/</id>
+    <link href="https://nanxin.me/2017/03/18/custom-demain-name-of-github-pages/"/>
+    <id>https://nanxin.me/2017/03/18/custom-demain-name-of-github-pages/</id>
     <published>2017-03-18T15:25:37.000Z</published>
     <updated>2018-05-01T13:56:13.150Z</updated>
     
@@ -614,12 +614,12 @@ $ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
     
     </summary>
     
-      <category term="hexo的博客搭建" scheme="https://cindygithub2016.github.io/blog/categories/hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="hexo的博客搭建" scheme="https://nanxin.me/categories/hexo%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="GitHub-Pages" scheme="https://cindygithub2016.github.io/blog/tags/GitHub-Pages/"/>
+      <category term="GitHub-Pages" scheme="https://nanxin.me/tags/GitHub-Pages/"/>
     
-      <category term="Gandi" scheme="https://cindygithub2016.github.io/blog/tags/Gandi/"/>
+      <category term="Gandi" scheme="https://nanxin.me/tags/Gandi/"/>
     
   </entry>
   
