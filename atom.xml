@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://nanxin.me/"/>
-  <updated>2018-05-04T10:17:23.991Z</updated>
+  <updated>2019-04-12T15:52:54.071Z</updated>
   <id>https://nanxin.me/</id>
   
   <author>
@@ -14,6 +14,154 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>详解相似图片匹配算法：差异值哈希算法+颜色直方图</title>
+    <link href="https://nanxin.me/2019/04/12/%E8%AF%A6%E8%A7%A3%E7%9B%B8%E4%BC%BC%E5%9B%BE%E7%89%87%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%EF%BC%9A%E5%B7%AE%E5%BC%82%E5%80%BC%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95-%E9%A2%9C%E8%89%B2%E7%9B%B4%E6%96%B9%E5%9B%BE/"/>
+    <id>https://nanxin.me/2019/04/12/详解相似图片匹配算法：差异值哈希算法-颜色直方图/</id>
+    <published>2019-04-12T15:48:57.000Z</published>
+    <updated>2019-04-12T15:52:54.071Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>由于最近涉及到匹配相似图片的问题，所以在此记录下解决办法：差异值哈希算法 + 颜色直方图</p>
+</blockquote>
+<p>环境要求：Python cv2库 math库</p>
+<h3 id="差异值哈希算法"><a href="#差异值哈希算法" class="headerlink" title="差异值哈希算法"></a>差异值哈希算法</h3><p> 检索相似图片，第一个想到的就是<code>差异值哈希算法</code>。这个算法的步骤是：</p>
+<ol>
+<li><p>缩小尺寸<br>一般将图片缩放为 <code>8 * 8</code> 的尺寸大小，共64个像素的图片。但是由于64个像素对于我来说，损失的细节太多所以我选择了缩放到 <code>33 * 32</code> 的尺寸大小</p>
+</li>
+<li><p>彩色图像灰度化<br>由于我们现有的图片是由 RGB 三原色构成，每个像素点是一个由这三个颜色组成的一个 list 。而 RGB 三个颜色中每个颜色值都是用 8 个比特来表示，大小范围是 0 ～ 255(2^8 - 1)，就一共有 <code>256 * 256 * 256</code> 种颜色。并且作为一个像素类似于这样的数值：[253 255 255] 是不利于简单比较的，肉眼看着类似的颜色，但是它的三个颜色分布可能相差很多。所以将它灰度化，用 256 个不同的灰色表示现有的图片。由于现在用一种灰色表示三种颜色，原来每个像素是一个 list 现在就降维成一个数值，数值的大小还是比较容易比较的。</p>
+</li>
+<li><p>比较像素的灰度值<br>比较图片灰度化的每行相邻像素之间的大小，每行后面像素值大于前面一个像素值那么记为1，如果不大于则记为0</p>
+</li>
+<li><p>计算哈希值<br>根据上一步得到了由0和1构成的数组合在一起就构成了1024位的整数</p>
+</li>
+<li><p>对比不同图片的汉明距离<br>对比两个图片生成的整数有多少位不一样。一般汉明距离小于 5 ，两张图片的相似度就很高了。</p>
+</li>
+</ol>
+<h4 id="差异值哈希算法的-Python-代码"><a href="#差异值哈希算法的-Python-代码" class="headerlink" title="差异值哈希算法的 Python 代码"></a>差异值哈希算法的 Python 代码</h4><pre><code>import cv2
+
+# 差异值哈希算法
+def dhash(image):
+    resize_height, resized_width = 32, 33
+    # 缩放到(resized_width, resize_height)尺寸的大小
+    resized_img = cv2.resize(image, (resized_width, resize_height))
+    # 图片灰度化
+    grey_resized_img = cv2.cvtColor(resized_img, cv2.COLOR_RGB2GRAY)
+    # 差异值计算
+    hash_list = []
+    for row in range(resize_height):
+        for col in range(resized_width - 1):
+            # 每行前一个颜色强度大于后一个，值为1，否则值为0
+            if grey_resized_img[row, col] &gt; grey_resized_img[row, col + 1]:
+                hash_list.append(&apos;1&apos;)
+            else:
+                hash_list.append(&apos;0&apos;)
+
+    return &apos;&apos; . join(hash_list)
+
+# 比较汉明距离
+def hamming_distance(dhash1, dhash2):
+    return bin(int(dhash1, base = 2) ^ int(dhash2, base = 2)).count(&apos;1&apos;)
+
+# 读取图片内容
+img1 = cv2.imread(img1_path)
+# 读取图片内容
+img2 = cv2.imread(img2_path)
+if hamming_distance(dhash(img1), dhash(img2)) &lt;= 5:
+    print(&apos;相似图片&apos;)
+</code></pre><h3 id="颜色直方图"><a href="#颜色直方图" class="headerlink" title="颜色直方图"></a>颜色直方图</h3><p> 由于差异值哈希失去了太多的细节，适合比较原图或者缩略图。所以我再加上颜色直方图的比较计算图片间的接近程度，用以排除部分像素的微小差异。</p>
+<ol>
+<li><p>缩小尺寸<br>一般将图片缩放为 <code>8 * 8</code> 的尺寸大小，共64个像素的图片。但是由于64个像素对于我来说，损失的细节太多所以我选择了缩放到 <code>32 * 32</code> 的尺寸大小</p>
+</li>
+<li><p>降低位深<br>原来 RGB 每个颜色都有 256 种变化，现在做一个映射，将原来的 256 分为 8(3个比特表示) 个颜色区间。类似旧的 0 - 31 对应新的颜色 0，以达到降低计算的效果</p>
+</li>
+<li><p>计算像素值<br>由于降低了位深，图片颜色值变小。每个颜色值不大于8（0 - 7），然后我们给三元素不同的权重，分别为 <code>8 * 8</code>，<code>8</code>，<code>1</code> 作为数组的 key，用以统计每个颜色的像素出现次数，并且不会出现不同颜色统计到了同一个 key 值下的目的。</p>
+</li>
+<li><p>计算相似度<br>计算出像素值后得到，我们得到了以不同颜色的数值为 key，出现次数为 value 的数组。这时候我们可以使用用余弦相似度去计算相同颜色出现次数的相似度，越是相似的像素最后值越接近于1。截图来自于<a href="https://zh.wikipedia.org/wiki/%E4%BD%99%E5%BC%A6%E7%9B%B8%E4%BC%BC%E6%80%A7" target="_blank" rel="external">WiKi</a></p>
+<p><img src="/uploads/详解相似图片匹配算法：差异值哈希算法+颜色直方图/1.png" alt="图片描述"></p>
+</li>
+</ol>
+<h4 id="颜色直方图的-Python-代码"><a href="#颜色直方图的-Python-代码" class="headerlink" title="颜色直方图的 Python 代码"></a>颜色直方图的 Python 代码</h4><pre><code>import cv2
+from math import sqrt
+
+# 颜色映射
+def bgr_mapping(img_val):
+    # 将bgr颜色分成8个区间做映射
+    if img_val &gt;= 0 and img_val &lt;= 31: return 0
+    if img_val &gt;= 32 and img_val &lt;= 63: return 1
+    if img_val &gt;= 64 and img_val &lt;= 95: return 2
+    if img_val &gt;= 96 and img_val &lt;= 127: return 3
+    if img_val &gt;= 128 and img_val &lt;= 159: return 4
+    if img_val &gt;= 160 and img_val &lt;= 191: return 5
+    if img_val &gt;= 192 and img_val &lt;= 223: return 6
+    if img_val &gt;= 224: return 7
+
+# 颜色直方图的数值计算
+def calc_bgr_hist(image):
+    if not image.size: return False
+    hist = {}
+    # 缩放尺寸减小计算量
+    image = cv2.resize(image, (32, 32))
+    for bgr_list in image:
+        for bgr in bgr_list:
+            # 颜色按照顺序映射
+            maped_b = bgr_mapping(bgr[0])
+            maped_g = bgr_mapping(bgr[1])
+            maped_r = bgr_mapping(bgr[2])
+            # 计算像素值
+            index   = maped_b * 8 * 8 + maped_g * 8 + maped_r
+            hist[index] = hist.get(index, 0) + 1
+
+    return hist
+
+# 计算两张图片的相似度
+def compare_similar_hist(h1, h2):
+    if not h1 or not h2: return False
+    sum1, sum2, sum_mixd = 0, 0, 0
+    # 像素值key的最大数不超过512，直接循环到512，遍历取出每个像素值
+    for i in range(512):
+        # 计算出现相同像素值次数的平方和
+        sum1 = sum1 + (h1.get(i, 0) * h1.get(i, 0))
+        sum2 = sum2 + (h2.get(i, 0) * h2.get(i, 0))
+        # 计算两个图片次数乘积的和
+        sum_mixd = sum_mixd + (h1.get(i, 0) * h2.get(i, 0))
+    # 按照余弦相似性定理计算相似度
+    return sum_mixd / (sqrt(sum1) * sqrt(sum2))
+
+# 读取图片内容
+img1 = cv2.imread(img1_path)
+# 读取图片内容
+img2 = cv2.imread(img2_path)
+if compare_similar_hist(calc_bgr_hist(img1), calc_bgr_hist(img2)) &lt; 0.9999:
+    print(&apos;相似图片&apos;)
+</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p> 总的来说：差异值哈希算法 + 颜色直方图 解决了我的相似图片匹配问题。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p> <a href="http://www.ruanyifeng.com/blog/2011/07/principle_of_similar_image_search.html" target="_blank" rel="external">相似图片搜索的原理一</a><br> <a href="http://www.ruanyifeng.com/blog/2013/03/similar_image_search_part_ii.html" target="_blank" rel="external">相似图片搜索的原理二</a></p>
+<ul>
+<li>本文作者：Cindy</li>
+<li>本文标题：Create Custom Demain Name Of Github Pages</li>
+<li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享4.0许可证）</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;由于最近涉及到匹配相似图片的问题，所以在此记录下解决办法：差异值哈希算法 + 颜色直方图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;环境要求：Python cv2库 math库&lt;/p&gt;
+&lt;h3 id=&quot;差异值哈希算法&quot;&gt;&lt;a href=&quot;#差异值哈
+    
+    </summary>
+    
+      <category term="Python教程" scheme="https://nanxin.me/categories/Python%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="https://nanxin.me/tags/Python/"/>
+    
+      <category term="相似图片检索" scheme="https://nanxin.me/tags/%E7%9B%B8%E4%BC%BC%E5%9B%BE%E7%89%87%E6%A3%80%E7%B4%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP 包与扩展的管理工具Pear、Composer 与 Pecl</title>
