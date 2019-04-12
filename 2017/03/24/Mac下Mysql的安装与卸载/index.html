@@ -108,42 +108,36 @@
 
 
 <meta name="description" content="用Homebrew安装Mysql,首先需要安装Homebrew。
-一、安装Mysql$ brew install mysql
-二、运行测试$ mysql.server start
+一、安装Mysql1$ brew install mysql
+二、运行测试1$ mysql.server start
 显示： 
 Starting MySQL
 . SUCCESS!
-三、登录默认情况下，Mysql用户root没有密码。
-$ mysql -uroot
-修改密码：
-$ mysqladmin -u root password &amp;">
+三、登录默认情况下，Mysql用户root没有密码。1$ mysql -uroot
+修改密码：1$ mysqladmin -u root password">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac下Mysql的安装与卸载">
 <meta property="og:url" content="https://nanxin.me/2017/03/24/Mac下Mysql的安装与卸载/index.html">
 <meta property="og:site_name" content="Cindy's Blog">
 <meta property="og:description" content="用Homebrew安装Mysql,首先需要安装Homebrew。
-一、安装Mysql$ brew install mysql
-二、运行测试$ mysql.server start
+一、安装Mysql1$ brew install mysql
+二、运行测试1$ mysql.server start
 显示： 
 Starting MySQL
 . SUCCESS!
-三、登录默认情况下，Mysql用户root没有密码。
-$ mysql -uroot
-修改密码：
-$ mysqladmin -u root password &amp;">
-<meta property="og:updated_time" content="2018-05-01T13:58:57.391Z">
+三、登录默认情况下，Mysql用户root没有密码。1$ mysql -uroot
+修改密码：1$ mysqladmin -u root password">
+<meta property="og:updated_time" content="2019-04-12T16:08:54.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下Mysql的安装与卸载">
 <meta name="twitter:description" content="用Homebrew安装Mysql,首先需要安装Homebrew。
-一、安装Mysql$ brew install mysql
-二、运行测试$ mysql.server start
+一、安装Mysql1$ brew install mysql
+二、运行测试1$ mysql.server start
 显示： 
 Starting MySQL
 . SUCCESS!
-三、登录默认情况下，Mysql用户root没有密码。
-$ mysql -uroot
-修改密码：
-$ mysqladmin -u root password &amp;">
+三、登录默认情况下，Mysql用户root没有密码。1$ mysql -uroot
+修改密码：1$ mysqladmin -u root password">
 
 
 
@@ -460,21 +454,16 @@ $ mysqladmin -u root password &amp;">
 
       
         <p>用Homebrew安装Mysql,首先需要安装<a href="https://brew.sh/" target="_blank" rel="external">Homebrew</a>。</p>
-<h3 id="一、安装Mysql"><a href="#一、安装Mysql" class="headerlink" title="一、安装Mysql"></a>一、安装Mysql</h3><pre><code>$ brew install mysql
-</code></pre><h3 id="二、运行测试"><a href="#二、运行测试" class="headerlink" title="二、运行测试"></a>二、运行测试</h3><pre><code>$ mysql.server start
-</code></pre><p>显示： </p>
+<h3 id="一、安装Mysql"><a href="#一、安装Mysql" class="headerlink" title="一、安装Mysql"></a>一、安装Mysql</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install mysql</div></pre></td></tr></table></figure>
+<h3 id="二、运行测试"><a href="#二、运行测试" class="headerlink" title="二、运行测试"></a>二、运行测试</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql.server start</div></pre></td></tr></table></figure>
+<p>显示： </p>
 <pre><code>Starting MySQL
 . SUCCESS!
-</code></pre><h3 id="三、登录"><a href="#三、登录" class="headerlink" title="三、登录"></a>三、登录</h3><p>默认情况下，Mysql用户root没有密码。</p>
-<pre><code>$ mysql -uroot
-</code></pre><p>修改密码：</p>
-<pre><code>$ mysqladmin -u root password &apos;new-password&apos;
-</code></pre><h3 id="四、卸载mysql"><a href="#四、卸载mysql" class="headerlink" title="四、卸载mysql"></a>四、卸载mysql</h3><pre><code>$ brew remove mysql
-$ brew cleanup
-</code></pre><p>如果设置了开机启动：</p>
-<pre><code>$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-$ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-</code></pre><p>（完）</p>
+</code></pre><h3 id="三、登录"><a href="#三、登录" class="headerlink" title="三、登录"></a>三、登录</h3><p>默认情况下，Mysql用户root没有密码。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql -uroot</div></pre></td></tr></table></figure></p>
+<p>修改密码：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysqladmin -u root password <span class="string">'new-password'</span></div></pre></td></tr></table></figure></p>
+<h3 id="四、卸载mysql"><a href="#四、卸载mysql" class="headerlink" title="四、卸载mysql"></a>四、卸载mysql</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew remove mysql</div><div class="line">$ brew cleanup</div></pre></td></tr></table></figure>
+<p>如果设置了开机启动：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</div><div class="line">$ rm -Rf ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</div></pre></td></tr></table></figure></p>
+<p>（完）</p>
 <ul>
 <li>本文作者：Cindy</li>
 <li>本文标题：Create Custom Demain Name Of Github Pages</li>

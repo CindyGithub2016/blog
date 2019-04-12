@@ -121,7 +121,7 @@ PearPear 是 PHP 扩展与应用库（the PHP Extension">
 PearPear 是 PHP 扩展与应用库（the PHP Extension">
 <meta property="og:image" content="https://nanxin.me/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/1.png">
 <meta property="og:image" content="https://nanxin.me/uploads/PHP包与扩展的管理工具Pear、Composer与Pecl/2.png">
-<meta property="og:updated_time" content="2018-05-04T10:17:23.991Z">
+<meta property="og:updated_time" content="2019-04-12T16:44:06.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP 包与扩展的管理工具Pear、Composer 与 Pecl">
 <meta name="twitter:description" content="PHP社区提供了几个管理扩展和包的工具包括Pecl、Pear、Pear2和Composer。在不了解的情况下去使用这些工具必然会出现困惑，所以下面就简单介绍下这几个管理工具。
@@ -458,11 +458,11 @@ PearPear 是 PHP 扩展与应用库（the PHP Extension">
 <h5 id="（1）Pear-installer"><a href="#（1）Pear-installer" class="headerlink" title="（1）Pear installer"></a>（1）Pear installer</h5><p>如果你安装的是PHP (&gt; 4.3.0)，并且编译时并未使用“./configure flag –without-pear”选项，那么 Pear installer 的安装已集成在系统里。但如果你安装的 PHP(&lt; 4.3.0)，那么你就需要手动安装 Pear installer。</p>
 <ol>
 <li><p>下载 go-pear.phar 文件</p>
-<pre><code>$ curl -O https://pear.php.net/go-pear.phar
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -O https://pear.php.net/go-pear.phar</div></pre></td></tr></table></figure>
+</li>
 <li><p>全局安装 Pear 命令和安装一些 Pear 包</p>
-<pre><code>$ sudo php -d detect_unicode=0 go-pear.phar
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo php <span class="_">-d</span> detect_unicode=0 go-pear.phar</div></pre></td></tr></table></figure>
+</li>
 <li><p>配置 Pear 进行安装</p>
 <pre><code>1) 更改 Installation Base 位置
 
@@ -479,11 +479,11 @@ PearPear 是 PHP 扩展与应用库（the PHP Extension">
 4）安装完成
 </code></pre></li>
 <li><p>查看版本</p>
-<pre><code>$ pear -V
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pear -V</div></pre></td></tr></table></figure>
+</li>
 <li><p>安装 Pear package 名称为 mypear</p>
-<pre><code>$ sudo pear install mypear
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pear install mypear</div></pre></td></tr></table></figure>
+</li>
 <li><p>使用安装包 mypear</p>
 </li>
 </ol>
@@ -492,20 +492,17 @@ PearPear 是 PHP 扩展与应用库（the PHP Extension">
 <li><p>Pyrus 正常工作需要 phar、simplexml、libxml2、spl 和 pcre 扩展，在 PHP (&gt; 5.3.0) 中是默认开启的</p>
 </li>
 <li><p>下载文件 pyrus.phar</p>
-<pre><code>$ wget http://pear2.php.net/pyrus.phar
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ wget http://pear2.php.net/pyrus.phar</div></pre></td></tr></table></figure>
+</li>
 <li><p>第一次使用先运行<code>php pyrus.phar</code></p>
-<pre><code>$ php pyrus.phar
-$ 输入 yes，然后按下Enter
-$ 输入你安装包存放的位置 /Users/my-project，然后按下Enter
-$ 安装完成
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ php pyrus.phar</div><div class="line">$ 输入 yes，然后按下Enter</div><div class="line">$ 输入你安装包存放的位置 /Users/my-project，然后按下Enter</div><div class="line">$ 安装完成</div></pre></td></tr></table></figure>
+</li>
 <li><p>查看版本</p>
-<pre><code>$ php pyrus.phar --version
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php pyrus.phar --version</div></pre></td></tr></table></figure>
+</li>
 <li><p>安装 Pear package 名称为 mypear</p>
-<pre><code>$ php pyrus.phar install mypear
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php pyrus.phar install mypear</div></pre></td></tr></table></figure>
+</li>
 <li><p>使用安装包 mypear</p>
 <pre><code>（1）因为 Pear 库中的包都是由 PHP 编写的，所以使用只需要在代码层手动 require/include 引入文件，但require_once 不被允许
 
@@ -519,41 +516,23 @@ $ 安装完成
 <ol>
 <li><p>下载 Pecl 扩展库 extname</p>
 <p>（1）通过 Pear 下载 Pecl 扩展库</p>
-<pre><code>$ pecl install extname
-</code></pre><p>（2）官网下载：<a href="http://pecl.php.net/" target="_blank" rel="external">http://pecl.php.net/</a> </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pecl install extname</div></pre></td></tr></table></figure>
+<p>（2）官网下载：<a href="http://pecl.php.net/" target="_blank" rel="external">http://pecl.php.net/</a> </p>
 <p>（3）SVN 下载，大多数 Pecl 扩展库也在 <a href="http://svn.php.net/viewvc/pecl/" target="_blank" rel="external">SVN</a> 中</p>
-<pre><code>$ svn checkout http://svn.php.net/repository/pecl/extname/trunk extname
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ svn checkout http://svn.php.net/repository/pecl/extname/trunk extname</div></pre></td></tr></table></figure>
+</li>
 <li><p>编译、安装</p>
 <p>（1）通过 Pear 下载编译共享 Pecl 扩展库 extname</p>
-<pre><code>$ pecl install extname
-
-这个过程下载 extname 的源代码，编译之，并将创建 extname.so 放置于 PHP 的扩展库目录中。
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pecl install extname</div></pre></td></tr></table></figure>
+<pre><code>这个过程下载 extname 的源代码，编译之，并将创建 extname.so 放置于 PHP 的扩展库目录中。
 </code></pre><p>（2）通过 phpize 编译共享 Pecl 扩展库 extname</p>
-<pre><code>1. 下载 extname 源代码
-
-2. 进入 extname 目录
-
-    $ cd extname
-
-3. 准备 PHP 扩展库的编译环境
-
-    $ phpize
-
-4. 编译
-
-    $ ./configure
-    $ make
-    $ make install
-
- 成功的安装并将创建 extname.so 并放置于 PHP 的扩展库目录中。
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">1. 下载 extname 源代码</div><div class="line"></div><div class="line">2. 进入 extname 目录</div><div class="line"></div><div class="line">	$ <span class="built_in">cd</span> extname</div><div class="line"></div><div class="line">3. 准备 PHP 扩展库的编译环境</div><div class="line"></div><div class="line">	$ phpize</div><div class="line"></div><div class="line">4. 编译</div><div class="line"></div><div class="line">	$ ./configure</div><div class="line">	$ make</div><div class="line">	$ make install</div></pre></td></tr></table></figure>
+<pre><code>成功的安装并将创建 extname.so 并放置于 PHP 的扩展库目录中。
 </code></pre></li>
 <li><p>加载</p>
 <p>（1）通过 php.ini 加载 extname.so</p>
-<pre><code>1）：Windows上是加载扩展的动态链接库后缀是“.dll”，在 Unix 或 Linux 上是“.so”
-
-2）：修改 php.ini，扩展已经在 php.ini 里。如果有 extension=extname.so 那么去掉前面“;”，或者直接添加 extension=extname.so
-</code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1）：Windows上是加载扩展的动态链接库后缀是“.dll”，在 Unix 或 Linux 上是“.so”</div><div class="line">		</div><div class="line">2）：修改 php.ini，扩展已经在 php.ini 里。如果有 extension=extname.so 那么去掉前面“;”，或者直接添加 extension=extname.so</div></pre></td></tr></table></figure>
+</li>
 <li><p>按照扩展文档方式启用扩展</p>
 </li>
 </ol>
@@ -561,17 +540,17 @@ $ 安装完成
 <li><p>Composer 需要 PHP（&gt; 5.3.2）</p>
 </li>
 <li><p>下载 composer.phar 到当前目录</p>
-<pre><code>$ curl -sS https://getcomposer.org/installer | php
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl <span class="_">-s</span>S https://getcomposer.org/installer | php</div></pre></td></tr></table></figure>
+</li>
 <li><p>运行 Composer</p>
-<pre><code>$ php composer.phar
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php composer.phar</div></pre></td></tr></table></figure>
+</li>
 <li><p>查看版本</p>
-<pre><code>$ php composer.phar -V
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php composer.phar -V</div></pre></td></tr></table></figure>
+</li>
 <li><p>下载安装包 package</p>
-<pre><code>$ php composer.phar install package
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ php composer.phar install package</div></pre></td></tr></table></figure>
+</li>
 <li><p>使用安装包</p>
 <p>（1）使用 autoloader 自动加载<br>因为 Composer 生成了一个 vendor/autoload.php 文件，可以直接 require/include 引入这个文件。</p>
 </li>

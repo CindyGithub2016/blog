@@ -110,11 +110,10 @@
 <meta name="description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
 二、Mac下RabbitMQ安装
 使用Homebrew安装
-$ brew install rabbitmq
+1$ brew install rabbitmq
 
 修改 ~/.bash_profile 配置环境变量：
-# RabbitMQ Config
-export PATH=$PATH:/usr/local/sb">
+12# RabbitMQ Configexport PATH=$PATH:/usr/local/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ使用">
 <meta property="og:url" content="https://nanxin.me/2017/11/25/RabbitMQ使用/index.html">
@@ -122,26 +121,24 @@ export PATH=$PATH:/usr/local/sb">
 <meta property="og:description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
 二、Mac下RabbitMQ安装
 使用Homebrew安装
-$ brew install rabbitmq
+1$ brew install rabbitmq
 
 修改 ~/.bash_profile 配置环境变量：
-# RabbitMQ Config
-export PATH=$PATH:/usr/local/sb">
+12# RabbitMQ Configexport PATH=$PATH:/usr/local/">
 <meta property="og:image" content="https://nanxin.me/uploads/RabbitMQ使用/1.png">
 <meta property="og:image" content="https://nanxin.me/uploads/RabbitMQ使用/2.png">
 <meta property="og:image" content="https://nanxin.me/uploads/RabbitMQ使用/3.png">
 <meta property="og:image" content="https://nanxin.me/uploads/RabbitMQ使用/4.png">
-<meta property="og:updated_time" content="2018-05-01T13:55:17.544Z">
+<meta property="og:updated_time" content="2019-04-12T16:38:19.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RabbitMQ使用">
 <meta name="twitter:description" content="一、RabbitMQ的定义RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。
 二、Mac下RabbitMQ安装
 使用Homebrew安装
-$ brew install rabbitmq
+1$ brew install rabbitmq
 
 修改 ~/.bash_profile 配置环境变量：
-# RabbitMQ Config
-export PATH=$PATH:/usr/local/sb">
+12# RabbitMQ Configexport PATH=$PATH:/usr/local/">
 <meta name="twitter:image" content="https://nanxin.me/uploads/RabbitMQ使用/1.png">
 
 
@@ -461,25 +458,24 @@ export PATH=$PATH:/usr/local/sb">
         <h3 id="一、RabbitMQ的定义"><a href="#一、RabbitMQ的定义" class="headerlink" title="一、RabbitMQ的定义"></a>一、RabbitMQ的定义</h3><p>RabbitMQ是使用erlang语言开发的开源消息队列系统，完整的实现了AMPQ（高级抽象层消息通信协议）。</p>
 <h3 id="二、Mac下RabbitMQ安装"><a href="#二、Mac下RabbitMQ安装" class="headerlink" title="二、Mac下RabbitMQ安装"></a>二、Mac下RabbitMQ安装</h3><ol>
 <li><p>使用Homebrew安装</p>
-<pre><code>$ brew install rabbitmq
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install rabbitmq</div></pre></td></tr></table></figure>
+</li>
 <li><p>修改 ~/.bash_profile 配置环境变量：</p>
-<pre><code># RabbitMQ Config
-export PATH=$PATH:/usr/local/sbin
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># RabbitMQ Config</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/sbin</div></pre></td></tr></table></figure>
+</li>
 <li><p>重启配置</p>
-<pre><code>$ source ~/.bash_profile
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">source</span> ~/.bash_profile</div></pre></td></tr></table></figure>
+</li>
 <li><p>启动mq服务（后台启动为rabbitmq-server -detached）</p>
-<pre><code>$ rabbitmq-server 
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rabbitmq-server</div></pre></td></tr></table></figure>
+</li>
 <li><p>登录管理界面 <a href="http://127.0.0.1:15672" target="_blank" rel="external">http://127.0.0.1:15672</a> 账号密码为：guest</p>
 </li>
 </ol>
 <h3 id="三、客户端"><a href="#三、客户端" class="headerlink" title="三、客户端"></a>三、客户端</h3><p>RabbitMQ官方提供了三种PHP可用的扩展：php-amqp，php-rabbit，php-amqplib</p>
 <h4 id="php-amqplib-安装"><a href="#php-amqplib-安装" class="headerlink" title="php-amqplib 安装"></a>php-amqplib 安装</h4><p>php的客户端现在常用的是php-amqplib</p>
-<h5 id="（1）直接拉取github上面的代码"><a href="#（1）直接拉取github上面的代码" class="headerlink" title="（1）直接拉取github上面的代码"></a>（1）直接拉取github上面的代码</h5><pre><code>$ git clone https://github.com/php-amqplib/php-amqplib.git
-</code></pre><h5 id="（2）composer安装（官网提供）"><a href="#（2）composer安装（官网提供）" class="headerlink" title="（2）composer安装（官网提供）"></a>（2）composer安装（官网提供）</h5><ol>
+<h5 id="（1）直接拉取github上面的代码"><a href="#（1）直接拉取github上面的代码" class="headerlink" title="（1）直接拉取github上面的代码"></a>（1）直接拉取github上面的代码</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/php-amqplib/php-amqplib.git</div></pre></td></tr></table></figure>
+<h5 id="（2）composer安装（官网提供）"><a href="#（2）composer安装（官网提供）" class="headerlink" title="（2）composer安装（官网提供）"></a>（2）composer安装（官网提供）</h5><ol>
 <li><p>将composer.json文件添加到您的项目中</p>
 <pre><code>{
      “require”：{
@@ -488,8 +484,8 @@ export PATH=$PATH:/usr/local/sbin
 }
 </code></pre></li>
 <li><p>下载依赖</p>
-<pre><code>$ composer install
-</code></pre></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ composer install</div></pre></td></tr></table></figure>
+</li>
 </ol>
 <h3 id="四、概念"><a href="#四、概念" class="headerlink" title="四、概念"></a>四、概念</h3><p><img src="/uploads/RabbitMQ使用/1.png" alt="图片描述"></p>
 <h4 id="Virtual-vhosts"><a href="#Virtual-vhosts" class="headerlink" title="Virtual vhosts"></a>Virtual vhosts</h4><p>virtual vhosts是一个命名空间，可以存在多个exchange和queue。实现了环境（用户，用户组，exchange，queue）隔离，是权限控制的最小粒度。默认的virtual host为/。</p>
@@ -511,60 +507,11 @@ export PATH=$PATH:/usr/local/sbin
 <h4 id="Channel-信道"><a href="#Channel-信道" class="headerlink" title="Channel(信道)"></a>Channel(信道)</h4><p>每个connection里，可建立多个channel，每个channel代表一个会话任务。做到尽量共用connection</p>
 <h3 id="五、RabbitMQ使用示例"><a href="#五、RabbitMQ使用示例" class="headerlink" title="五、RabbitMQ使用示例"></a>五、RabbitMQ使用示例</h3><ol>
 <li><p>send.php:</p>
-<pre><code>require_once __DIR__ . &apos;/vendor/autoload.php&apos;;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Message\AMQPMessage;
-
-// 创建连接
-$connection = new AMQPStreamConnection(&apos;localhost&apos;, 5672, &apos;guest&apos;, &apos;guest&apos;);
-// 创建channel，多个channel可以共用连接
-$channel = $connection-&gt;channel();
-
-// 创建交换机以及队列（如果已经存在，不需要重新再次创建并且绑定）
-
-// 创建直连的交换机
-$channel-&gt;exchange_declare(&apos;direct_logs&apos;, &apos;direct&apos;, false, false, false);
-// 创建队列
-$channel-&gt;queue_declare(&apos;hello&apos;, false, false, false, false);
-// 交换机跟队列的绑定，
-$channel-&gt;queue_bind(&apos;hello&apos;, &apos;direct_logs&apos;, &apos;routigKey&apos;);
-
-// 设置消息bady传送字符串logs(消息只能为字符串，建议消息均json格式)
-$msg = new AMQPMessage(&apos;logs&apos;);
-// 发送数据到对应的交换机direct_logs并设置对应的routigKey
-$channel-&gt;basic_publish($msg, &apos;direct_logs&apos;, &apos;routigKey&apos;);
-</code></pre></li>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require_once</span> <span class="keyword">__DIR__</span> . <span class="string">'/vendor/autoload.php'</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">PhpAmqpLib</span>\<span class="title">Connection</span>\<span class="title">AMQPStreamConnection</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">PhpAmqpLib</span>\<span class="title">Message</span>\<span class="title">AMQPMessage</span>;</div><div class="line"></div><div class="line"><span class="comment">// 创建连接</span></div><div class="line">$connection = <span class="keyword">new</span> AMQPStreamConnection(<span class="string">'localhost'</span>, <span class="number">5672</span>, <span class="string">'guest'</span>, <span class="string">'guest'</span>);</div><div class="line"><span class="comment">// 创建channel，多个channel可以共用连接</span></div><div class="line">$channel = $connection-&gt;channel();</div><div class="line"></div><div class="line"><span class="comment">// 创建交换机以及队列（如果已经存在，不需要重新再次创建并且绑定）</span></div><div class="line"></div><div class="line"><span class="comment">// 创建直连的交换机</span></div><div class="line">$channel-&gt;exchange_declare(<span class="string">'direct_logs'</span>, <span class="string">'direct'</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>);</div><div class="line"><span class="comment">// 创建队列</span></div><div class="line">$channel-&gt;queue_declare(<span class="string">'hello'</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>);</div><div class="line"><span class="comment">// 交换机跟队列的绑定，</span></div><div class="line">$channel-&gt;queue_bind(<span class="string">'hello'</span>, <span class="string">'direct_logs'</span>, <span class="string">'routigKey'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 设置消息bady传送字符串logs(消息只能为字符串，建议消息均json格式)</span></div><div class="line">$msg = <span class="keyword">new</span> AMQPMessage(<span class="string">'logs'</span>);</div><div class="line"><span class="comment">// 发送数据到对应的交换机direct_logs并设置对应的routigKey</span></div><div class="line">$channel-&gt;basic_publish($msg, <span class="string">'direct_logs'</span>, <span class="string">'routigKey'</span>);</div></pre></td></tr></table></figure>
+</li>
 <li><p>receive.php:</p>
-<pre><code>require_once __DIR__ . &apos;/vendor/autoload.php&apos;;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-
-// 创建连接
-$connection = new AMQPStreamConnection(&apos;localhost&apos;, 5672, &apos;guest&apos;, &apos;guest&apos;);
-// 创建channel，多个channel可以共用连接
-$channel = $connection-&gt;channel();
-
-// 可能会在数据发布之前启动消费者，所以我们要确保队列存在，然后再尝试从中消费消息。
-
-// 创建直连的交换机
-$channel-&gt;exchange_declare(&apos;direct_logs&apos;, &apos;direct&apos;, false, false, false);
-// 创建队列
-$channel-&gt;queue_declare(&apos;hello&apos;, false, false, false, false);
-// 交换机跟队列的绑定，
-$channel-&gt;queue_bind(&apos;hello&apos;, &apos;direct_logs&apos;, &apos;routigKey&apos;);
-
-// 回调函数
-$callback = function ($msg) {
-    echo $msg-&gt;body;
-};
-
-// 启动队列消费者
-$channel-&gt;basic_consume(&apos;hello3&apos;, &apos;&apos;, false, true, false, false, $callback);
-// 判断是否存在回调函数
-while(count($channel-&gt;callbacks)) {
-    // 此处为执行回调函数
-    $channel-&gt;wait();
-}
-</code></pre></li>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require_once</span> <span class="keyword">__DIR__</span> . <span class="string">'/vendor/autoload.php'</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">PhpAmqpLib</span>\<span class="title">Connection</span>\<span class="title">AMQPStreamConnection</span>;</div><div class="line"></div><div class="line"><span class="comment">// 创建连接</span></div><div class="line">$connection = <span class="keyword">new</span> AMQPStreamConnection(<span class="string">'localhost'</span>, <span class="number">5672</span>, <span class="string">'guest'</span>, <span class="string">'guest'</span>);</div><div class="line"><span class="comment">// 创建channel，多个channel可以共用连接</span></div><div class="line">$channel = $connection-&gt;channel();</div><div class="line"></div><div class="line"><span class="comment">// 可能会在数据发布之前启动消费者，所以我们要确保队列存在，然后再尝试从中消费消息。</span></div><div class="line"></div><div class="line"><span class="comment">// 创建直连的交换机</span></div><div class="line">$channel-&gt;exchange_declare(<span class="string">'direct_logs'</span>, <span class="string">'direct'</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>);</div><div class="line"><span class="comment">// 创建队列</span></div><div class="line">$channel-&gt;queue_declare(<span class="string">'hello'</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>);</div><div class="line"><span class="comment">// 交换机跟队列的绑定，</span></div><div class="line">$channel-&gt;queue_bind(<span class="string">'hello'</span>, <span class="string">'direct_logs'</span>, <span class="string">'routigKey'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 回调函数</span></div><div class="line">$callback = <span class="function"><span class="keyword">function</span> <span class="params">($msg)</span> </span>&#123;</div><div class="line">    <span class="keyword">echo</span> $msg-&gt;body;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 启动队列消费者</span></div><div class="line">$channel-&gt;basic_consume(<span class="string">'hello3'</span>, <span class="string">''</span>, <span class="keyword">false</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, $callback);</div><div class="line"><span class="comment">// 判断是否存在回调函数</span></div><div class="line"><span class="keyword">while</span>(count($channel-&gt;callbacks)) &#123;</div><div class="line">    <span class="comment">// 此处为执行回调函数</span></div><div class="line">    $channel-&gt;wait();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ol>
 <h3 id="六、RabbitMQ备注"><a href="#六、RabbitMQ备注" class="headerlink" title="六、RabbitMQ备注"></a>六、RabbitMQ备注</h3><ol>
 <li>非持久化会导致，队列重启，数据丢失</li>

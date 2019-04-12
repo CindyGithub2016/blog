@@ -128,7 +128,7 @@
 
 彩色图像灰度">
 <meta property="og:image" content="https://nanxin.me/uploads/详解相似图片匹配算法：差异值哈希算法+颜色直方图/1.png">
-<meta property="og:updated_time" content="2019-04-12T15:52:54.071Z">
+<meta property="og:updated_time" content="2019-04-12T16:47:43.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解相似图片匹配算法：差异值哈希算法+颜色直方图">
 <meta name="twitter:description" content="由于最近涉及到匹配相似图片的问题，所以在此记录下解决办法：差异值哈希算法 + 颜色直方图
@@ -472,38 +472,8 @@
 <li><p>对比不同图片的汉明距离<br>对比两个图片生成的整数有多少位不一样。一般汉明距离小于 5 ，两张图片的相似度就很高了。</p>
 </li>
 </ol>
-<h4 id="差异值哈希算法的-Python-代码"><a href="#差异值哈希算法的-Python-代码" class="headerlink" title="差异值哈希算法的 Python 代码"></a>差异值哈希算法的 Python 代码</h4><pre><code>import cv2
-
-# 差异值哈希算法
-def dhash(image):
-    resize_height, resized_width = 32, 33
-    # 缩放到(resized_width, resize_height)尺寸的大小
-    resized_img = cv2.resize(image, (resized_width, resize_height))
-    # 图片灰度化
-    grey_resized_img = cv2.cvtColor(resized_img, cv2.COLOR_RGB2GRAY)
-    # 差异值计算
-    hash_list = []
-    for row in range(resize_height):
-        for col in range(resized_width - 1):
-            # 每行前一个颜色强度大于后一个，值为1，否则值为0
-            if grey_resized_img[row, col] &gt; grey_resized_img[row, col + 1]:
-                hash_list.append(&apos;1&apos;)
-            else:
-                hash_list.append(&apos;0&apos;)
-
-    return &apos;&apos; . join(hash_list)
-
-# 比较汉明距离
-def hamming_distance(dhash1, dhash2):
-    return bin(int(dhash1, base = 2) ^ int(dhash2, base = 2)).count(&apos;1&apos;)
-
-# 读取图片内容
-img1 = cv2.imread(img1_path)
-# 读取图片内容
-img2 = cv2.imread(img2_path)
-if hamming_distance(dhash(img1), dhash(img2)) &lt;= 5:
-    print(&apos;相似图片&apos;)
-</code></pre><h3 id="颜色直方图"><a href="#颜色直方图" class="headerlink" title="颜色直方图"></a>颜色直方图</h3><p> 由于差异值哈希失去了太多的细节，适合比较原图或者缩略图。所以我再加上颜色直方图的比较计算图片间的接近程度，用以排除部分像素的微小差异。</p>
+<h4 id="差异值哈希算法的-Python-代码"><a href="#差异值哈希算法的-Python-代码" class="headerlink" title="差异值哈希算法的 Python 代码"></a>差异值哈希算法的 Python 代码</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cv2</div><div class="line"></div><div class="line"><span class="comment"># 差异值哈希算法</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dhash</span><span class="params">(image)</span>:</span></div><div class="line">    resize_height, resized_width = <span class="number">32</span>, <span class="number">33</span></div><div class="line">    <span class="comment"># 缩放到(resized_width, resize_height)尺寸的大小</span></div><div class="line">    resized_img = cv2.resize(image, (resized_width, resize_height))</div><div class="line">    <span class="comment"># 图片灰度化</span></div><div class="line">    grey_resized_img = cv2.cvtColor(resized_img, cv2.COLOR_RGB2GRAY)</div><div class="line">    <span class="comment"># 差异值计算</span></div><div class="line">    hash_list = []</div><div class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> range(resize_height):</div><div class="line">        <span class="keyword">for</span> col <span class="keyword">in</span> range(resized_width - <span class="number">1</span>):</div><div class="line">            <span class="comment"># 每行前一个颜色强度大于后一个，值为1，否则值为0</span></div><div class="line">            <span class="keyword">if</span> grey_resized_img[row, col] &gt; grey_resized_img[row, col + <span class="number">1</span>]:</div><div class="line">                hash_list.append(<span class="string">'1'</span>)</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                hash_list.append(<span class="string">'0'</span>)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="string">''</span> . join(hash_list)</div><div class="line"></div><div class="line"><span class="comment"># 比较汉明距离</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hamming_distance</span><span class="params">(dhash1, dhash2)</span>:</span></div><div class="line">    <span class="keyword">return</span> bin(int(dhash1, base = <span class="number">2</span>) ^ int(dhash2, base = <span class="number">2</span>)).count(<span class="string">'1'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 读取图片内容</span></div><div class="line">img1 = cv2.imread(img1_path)</div><div class="line"><span class="comment"># 读取图片内容</span></div><div class="line">img2 = cv2.imread(img2_path)</div><div class="line"><span class="keyword">if</span> hamming_distance(dhash(img1), dhash(img2)) &lt;= <span class="number">5</span>:</div><div class="line">    print(<span class="string">'相似图片'</span>)</div></pre></td></tr></table></figure>
+<h3 id="颜色直方图"><a href="#颜色直方图" class="headerlink" title="颜色直方图"></a>颜色直方图</h3><p> 由于差异值哈希失去了太多的细节，适合比较原图或者缩略图。所以我再加上颜色直方图的比较计算图片间的接近程度，用以排除部分像素的微小差异。</p>
 <ol>
 <li><p>缩小尺寸<br>一般将图片缩放为 <code>8 * 8</code> 的尺寸大小，共64个像素的图片。但是由于64个像素对于我来说，损失的细节太多所以我选择了缩放到 <code>32 * 32</code> 的尺寸大小</p>
 </li>
@@ -515,61 +485,10 @@ if hamming_distance(dhash(img1), dhash(img2)) &lt;= 5:
 <p><img src="/uploads/详解相似图片匹配算法：差异值哈希算法+颜色直方图/1.png" alt="图片描述"></p>
 </li>
 </ol>
-<h4 id="颜色直方图的-Python-代码"><a href="#颜色直方图的-Python-代码" class="headerlink" title="颜色直方图的 Python 代码"></a>颜色直方图的 Python 代码</h4><pre><code>import cv2
-from math import sqrt
-
-# 颜色映射
-def bgr_mapping(img_val):
-    # 将bgr颜色分成8个区间做映射
-    if img_val &gt;= 0 and img_val &lt;= 31: return 0
-    if img_val &gt;= 32 and img_val &lt;= 63: return 1
-    if img_val &gt;= 64 and img_val &lt;= 95: return 2
-    if img_val &gt;= 96 and img_val &lt;= 127: return 3
-    if img_val &gt;= 128 and img_val &lt;= 159: return 4
-    if img_val &gt;= 160 and img_val &lt;= 191: return 5
-    if img_val &gt;= 192 and img_val &lt;= 223: return 6
-    if img_val &gt;= 224: return 7
-
-# 颜色直方图的数值计算
-def calc_bgr_hist(image):
-    if not image.size: return False
-    hist = {}
-    # 缩放尺寸减小计算量
-    image = cv2.resize(image, (32, 32))
-    for bgr_list in image:
-        for bgr in bgr_list:
-            # 颜色按照顺序映射
-            maped_b = bgr_mapping(bgr[0])
-            maped_g = bgr_mapping(bgr[1])
-            maped_r = bgr_mapping(bgr[2])
-            # 计算像素值
-            index   = maped_b * 8 * 8 + maped_g * 8 + maped_r
-            hist[index] = hist.get(index, 0) + 1
-
-    return hist
-
-# 计算两张图片的相似度
-def compare_similar_hist(h1, h2):
-    if not h1 or not h2: return False
-    sum1, sum2, sum_mixd = 0, 0, 0
-    # 像素值key的最大数不超过512，直接循环到512，遍历取出每个像素值
-    for i in range(512):
-        # 计算出现相同像素值次数的平方和
-        sum1 = sum1 + (h1.get(i, 0) * h1.get(i, 0))
-        sum2 = sum2 + (h2.get(i, 0) * h2.get(i, 0))
-        # 计算两个图片次数乘积的和
-        sum_mixd = sum_mixd + (h1.get(i, 0) * h2.get(i, 0))
-    # 按照余弦相似性定理计算相似度
-    return sum_mixd / (sqrt(sum1) * sqrt(sum2))
-
-# 读取图片内容
-img1 = cv2.imread(img1_path)
-# 读取图片内容
-img2 = cv2.imread(img2_path)
-if compare_similar_hist(calc_bgr_hist(img1), calc_bgr_hist(img2)) &lt; 0.9999:
-    print(&apos;相似图片&apos;)
-</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p> 总的来说：差异值哈希算法 + 颜色直方图 解决了我的相似图片匹配问题。</p>
+<h4 id="颜色直方图的-Python-代码"><a href="#颜色直方图的-Python-代码" class="headerlink" title="颜色直方图的 Python 代码"></a>颜色直方图的 Python 代码</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> cv2</div><div class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</div><div class="line"></div><div class="line"><span class="comment"># 颜色映射</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bgr_mapping</span><span class="params">(img_val)</span>:</span></div><div class="line">    <span class="comment"># 将bgr颜色分成8个区间做映射</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">0</span> <span class="keyword">and</span> img_val &lt;= <span class="number">31</span>: <span class="keyword">return</span> <span class="number">0</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">32</span> <span class="keyword">and</span> img_val &lt;= <span class="number">63</span>: <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">64</span> <span class="keyword">and</span> img_val &lt;= <span class="number">95</span>: <span class="keyword">return</span> <span class="number">2</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">96</span> <span class="keyword">and</span> img_val &lt;= <span class="number">127</span>: <span class="keyword">return</span> <span class="number">3</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">128</span> <span class="keyword">and</span> img_val &lt;= <span class="number">159</span>: <span class="keyword">return</span> <span class="number">4</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">160</span> <span class="keyword">and</span> img_val &lt;= <span class="number">191</span>: <span class="keyword">return</span> <span class="number">5</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">192</span> <span class="keyword">and</span> img_val &lt;= <span class="number">223</span>: <span class="keyword">return</span> <span class="number">6</span></div><div class="line">    <span class="keyword">if</span> img_val &gt;= <span class="number">224</span>: <span class="keyword">return</span> <span class="number">7</span></div><div class="line"></div><div class="line"><span class="comment"># 颜色直方图的数值计算</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc_bgr_hist</span><span class="params">(image)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> image.size: <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    hist = &#123;&#125;</div><div class="line">    <span class="comment"># 缩放尺寸减小计算量</span></div><div class="line">    image = cv2.resize(image, (<span class="number">32</span>, <span class="number">32</span>))</div><div class="line">    <span class="keyword">for</span> bgr_list <span class="keyword">in</span> image:</div><div class="line">        <span class="keyword">for</span> bgr <span class="keyword">in</span> bgr_list:</div><div class="line">            <span class="comment"># 颜色按照顺序映射</span></div><div class="line">            maped_b = bgr_mapping(bgr[<span class="number">0</span>])</div><div class="line">            maped_g = bgr_mapping(bgr[<span class="number">1</span>])</div><div class="line">            maped_r = bgr_mapping(bgr[<span class="number">2</span>])</div><div class="line">            <span class="comment"># 计算像素值</span></div><div class="line">            index   = maped_b * <span class="number">8</span> * <span class="number">8</span> + maped_g * <span class="number">8</span> + maped_r</div><div class="line">            hist[index] = hist.get(index, <span class="number">0</span>) + <span class="number">1</span></div><div class="line">    </div><div class="line">    <span class="keyword">return</span> hist</div><div class="line"></div><div class="line"><span class="comment"># 计算两张图片的相似度</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">compare_similar_hist</span><span class="params">(h1, h2)</span>:</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">not</span> h1 <span class="keyword">or</span> <span class="keyword">not</span> h2: <span class="keyword">return</span> <span class="keyword">False</span></div><div class="line">    sum1, sum2, sum_mixd = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></div><div class="line">    <span class="comment"># 像素值key的最大数不超过512，直接循环到512，遍历取出每个像素值</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">512</span>):</div><div class="line">        <span class="comment"># 计算出现相同像素值次数的平方和</span></div><div class="line">        sum1 = sum1 + (h1.get(i, <span class="number">0</span>) * h1.get(i, <span class="number">0</span>))</div><div class="line">        sum2 = sum2 + (h2.get(i, <span class="number">0</span>) * h2.get(i, <span class="number">0</span>))</div><div class="line">        <span class="comment"># 计算两个图片次数乘积的和</span></div><div class="line">        sum_mixd = sum_mixd + (h1.get(i, <span class="number">0</span>) * h2.get(i, <span class="number">0</span>))</div><div class="line">    <span class="comment"># 按照余弦相似性定理计算相似度</span></div><div class="line">    <span class="keyword">return</span> sum_mixd / (sqrt(sum1) * sqrt(sum2))</div><div class="line"></div><div class="line"><span class="comment"># 读取图片内容</span></div><div class="line">img1 = cv2.imread(img1_path)</div><div class="line"><span class="comment"># 读取图片内容</span></div><div class="line">img2 = cv2.imread(img2_path)</div><div class="line"><span class="keyword">if</span> compare_similar_hist(calc_bgr_hist(img1), calc_bgr_hist(img2)) &lt; <span class="number">0.9999</span>:</div><div class="line">    print(<span class="string">'相似图片'</span>)</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p> 总的来说：差异值哈希算法 + 颜色直方图 解决了我的相似图片匹配问题。</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p> <a href="http://www.ruanyifeng.com/blog/2011/07/principle_of_similar_image_search.html" target="_blank" rel="external">相似图片搜索的原理一</a><br> <a href="http://www.ruanyifeng.com/blog/2013/03/similar_image_search_part_ii.html" target="_blank" rel="external">相似图片搜索的原理二</a></p>
+<p>（完）</p>
 <ul>
 <li>本文作者：Cindy</li>
 <li>本文标题：Create Custom Demain Name Of Github Pages</li>

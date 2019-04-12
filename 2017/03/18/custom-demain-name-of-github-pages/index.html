@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://nanxin.me/uploads/Create-Custom-Demain-Name-Of-Github-Pages/3.png">
 <meta property="og:image" content="https://nanxin.me/uploads/Create-Custom-Demain-Name-Of-Github-Pages/4.png">
 <meta property="og:image" content="https://nanxin.me/uploads/Create-Custom-Demain-Name-Of-Github-Pages/5.png">
-<meta property="og:updated_time" content="2018-05-01T13:56:13.150Z">
+<meta property="og:updated_time" content="2019-04-12T16:33:45.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Create Custom Demain Name Of Github Pages">
 <meta name="twitter:description" content="用自定义网址去替换username.github.io.，因为自己有这样的需求，但是在网上看到的大多都不适用，所以整理下正确的三步方法。
@@ -464,7 +464,7 @@
 <p>(2) 新增一个跟(1)类似的纪录，只是将IP替换为192.30.252.154。</p>
 <h3 id="二、多个域名映射"><a href="#二、多个域名映射" class="headerlink" title="二、多个域名映射"></a>二、多个域名映射</h3><p>新增类型CNAME,别名解析。那么底下的值就应该填你的Github pages的域名username.github.io. ,主机纪录选择www。TTL一样设置3600s。</p>
 <p>最后点击使用此版本，并且确认使用此区域的域名是username.me。（DNS需要几个小时才能生效）</p>
-<h3 id="三、隐藏username-github-io域名"><a href="#三、隐藏username-github-io域名" class="headerlink" title="三、隐藏username.github.io域名"></a>三、隐藏username.github.io域名</h3><p>  在根目录下面创建一个名为CNAME的文本文件， 里面内容为你的.me域名：<br>        $ vi CNAME</p>
+<h3 id="三、隐藏username-github-io域名"><a href="#三、隐藏username-github-io域名" class="headerlink" title="三、隐藏username.github.io域名"></a>三、隐藏username.github.io域名</h3><p>  在根目录下面创建一个名为CNAME的文本文件， 里面内容为你的.me域名：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi CNAME</div></pre></td></tr></table></figure></p>
 <p><img src="/uploads/Create-Custom-Demain-Name-Of-Github-Pages/4.png" alt="图片描述"><br>或者直接在Github项目的setting中直接设置custom domain。</p>
 <p>接着访问你的username.github.io的网址，会发现301重定向到了username.me</p>
 <p><img src="/uploads/Create-Custom-Demain-Name-Of-Github-Pages/5.png" alt="图片描述"></p>

@@ -109,29 +109,29 @@
 
 <meta name="description" content="一、数据库的定义我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。
 二、存储引擎的定义关系型数据库是以表的形式存储在文件或者内存中。而存储引擎可以称为操作，存储这些表的类型。
-三、支持的存储引擎$ mysql&amp;gt; show engines;
+三、支持的存储引擎1$ mysql&amp;gt; show engines;
 
-四、详解InnoDB引擎InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外键">
+四、详解InnoDB引擎InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql的引擎详解">
 <meta property="og:url" content="https://nanxin.me/2017/03/25/Mysql的引擎详解/index.html">
 <meta property="og:site_name" content="Cindy's Blog">
 <meta property="og:description" content="一、数据库的定义我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。
 二、存储引擎的定义关系型数据库是以表的形式存储在文件或者内存中。而存储引擎可以称为操作，存储这些表的类型。
-三、支持的存储引擎$ mysql&amp;gt; show engines;
+三、支持的存储引擎1$ mysql&amp;gt; show engines;
 
-四、详解InnoDB引擎InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外键">
+四、详解InnoDB引擎InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外">
 <meta property="og:image" content="https://nanxin.me/uploads/Mysql的引擎详解/1.png">
 <meta property="og:image" content="https://nanxin.me/uploads/Mysql的引擎详解/2.png">
 <meta property="og:image" content="https://nanxin.me/uploads/Mysql的引擎详解/3.png">
-<meta property="og:updated_time" content="2018-05-01T13:56:56.223Z">
+<meta property="og:updated_time" content="2019-04-12T16:09:41.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql的引擎详解">
 <meta name="twitter:description" content="一、数据库的定义我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。
 二、存储引擎的定义关系型数据库是以表的形式存储在文件或者内存中。而存储引擎可以称为操作，存储这些表的类型。
-三、支持的存储引擎$ mysql&amp;gt; show engines;
+三、支持的存储引擎1$ mysql&amp;gt; show engines;
 
-四、详解InnoDB引擎InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外键">
+四、详解InnoDB引擎InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外">
 <meta name="twitter:image" content="https://nanxin.me/uploads/Mysql的引擎详解/1.png">
 
 
@@ -450,8 +450,8 @@
       
         <h3 id="一、数据库的定义"><a href="#一、数据库的定义" class="headerlink" title="一、数据库的定义"></a>一、数据库的定义</h3><p>我们说的Mysql数据库是数据库管理系统。其中包含了数据的存储，查询，以及更新数据库中存储数据的的功能等。</p>
 <h3 id="二、存储引擎的定义"><a href="#二、存储引擎的定义" class="headerlink" title="二、存储引擎的定义"></a>二、存储引擎的定义</h3><p>关系型数据库是以表的形式存储在文件或者内存中。而存储引擎可以称为操作，存储这些<code>表的类型</code>。</p>
-<h3 id="三、支持的存储引擎"><a href="#三、支持的存储引擎" class="headerlink" title="三、支持的存储引擎"></a>三、支持的存储引擎</h3><pre><code>$ mysql&gt; show engines;
-</code></pre><p><img src="/uploads/Mysql的引擎详解/1.png" alt="图片描述"></p>
+<h3 id="三、支持的存储引擎"><a href="#三、支持的存储引擎" class="headerlink" title="三、支持的存储引擎"></a>三、支持的存储引擎</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mysql&gt; show engines;</div></pre></td></tr></table></figure>
+<p><img src="/uploads/Mysql的引擎详解/1.png" alt="图片描述"></p>
 <h3 id="四、详解InnoDB引擎"><a href="#四、详解InnoDB引擎" class="headerlink" title="四、详解InnoDB引擎"></a>四、详解InnoDB引擎</h3><p>InnoDB引擎是一个常用的事务型存储引擎。提供了事务，行级锁机制和外键约束的功能。适用于以下场合：</p>
 <ol>
 <li>事务</li>
@@ -483,8 +483,8 @@
 <blockquote>
 <p>提示：最后的归类总结跟引擎使用的索引有关，下节会讲到。</p>
 </blockquote>
-<h3 id="六、使用示例"><a href="#六、使用示例" class="headerlink" title="六、使用示例"></a>六、使用示例</h3><pre><code>$ create table MYTABLE2 (name VARCHAR(20), sex CHAR(1))ENGINE=MyISAM;
-</code></pre><p>（完）</p>
+<h3 id="六、使用示例"><a href="#六、使用示例" class="headerlink" title="六、使用示例"></a>六、使用示例</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ create table MYTABLE2 (name VARCHAR(20), sex CHAR(1))ENGINE=MyISAM;</div></pre></td></tr></table></figure>
+<p>（完）</p>
 <ul>
 <li>本文作者：Cindy</li>
 <li>本文标题：Create Custom Demain Name Of Github Pages</li>
